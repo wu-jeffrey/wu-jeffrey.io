@@ -10,22 +10,83 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="page-about">
   <template>
     <style include="shared-styles">
       :host {
-        display: block;
-        width: 50vw;
+        display: flex;
+        justify-content: space-around;
         padding: 10px;
       }
+
+      .card {
+        min-width: 50vw;
+        margin: auto;
+        text-align: center;
+      }
+
+      .card-content {
+        padding-top: 80px;
+        max-width: 700px;
+      }
+
+      .description {
+        margin-top: 25px;
+      }
+
+      #header {
+        position: relative;
+        height: 250px;
+        min-width: 280px;
+        width: 100%;
+        background: url("../images/background.jpg");
+        background-size: cover;
+        background-position: center center;
+      }
+
+      #profile {
+        background: url("../images/profile.jpg");
+        background-color: var(--app-secondary-color);
+        background-position: center top;
+        background-size: cover;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-radius: 100%;
+        border: 3px solid var(--app-secondary-color);
+        width: 130px;
+        height: 130px;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        transform: translateY(50%);
+      }
+
+
     </style>
 
-    <paper-card heading="Jeffrey Wu" class="card">
+    <paper-card class="card">
+      <div id="header">
+        <div id="profile"></div>
+      </div>
       <div class="card-content">
-        <p>Ut labores minimum atomorum pro. Laudem tibique ut has.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
+        <h1>Jeffrey Wu</h1>
+        <h3>Mechatronics</h3>
+        <div>Hello, <span id="meme">My name is Jeff</span> and welcome to my website!</div>
+        <div class="description">
+          I'm currently a student at the University of Waterloo working towards my degree in Mechatronics Engineering.
+          I have extensive experience in web development, graphics design, 3D modeling and am always willing to learn more!
+        </div>
+      </div>
+
+
+        <!-- <iron-icon icon="social:github"></iron-icon>
+        <iron-icon icon="social:linkedin"></iron-icon> -->
       </div>
     </paper-card>
   </template>

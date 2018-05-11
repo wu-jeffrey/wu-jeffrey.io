@@ -33,20 +33,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template>
     <style>
       :host {
-        --app-primary-color: #3773b9;
-        --app-secondary-color: black;
+        --app-primary-color: #01A7FD;
+        --app-secondary-color: #FFFF8D;
 
         display: block;
         height: 100vh;
         width: 100vw;
-        background: url("../images/background.jpg");
+        background-color: #E3E3E3;
         background-size: cover;
       }
 
       app-header {
-        color: #000;
-        background-color: transparent;
-        --paper-tabs-selection-bar-color: var(--app-primary-color);
+        color: #fff;
+        background-color: var(--app-primary-color);
+        --paper-tabs-selection-bar-color: var(--app-secondary-color);
+        min-height: 100px;
       }
 
     </style>
