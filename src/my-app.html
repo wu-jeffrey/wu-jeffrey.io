@@ -105,7 +105,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <iron-selector selected={{page}} attr-for-selected="name" selected-attribute="selected" on-selected-changed="toggleDrawer">
             <div class="drawer-option" name="about"><iron-icon icon="icons:account-circle"></iron-icon>ABOUT</div>
             <div class="drawer-option" name="resume"><iron-icon icon="icons:assignment"></iron-icon>RESUME</div>
-            <div class="drawer-option" name="portfolio"><iron-icon icon="icons:work"></iron-icon>PORTFOLIO</div>
+            <!-- <div class="drawer-option" name="portfolio"><iron-icon icon="icons:work"></iron-icon>PORTFOLIO</div> -->
           </iron-selector>
         </div>
       </app-drawer>
@@ -140,8 +140,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           },
           routeData: Object,
           subroute: Object,
-          // This shouldn't be neccessary, but the Analyzer isn't picking up
-          // Polymer.Element#rootPath
           rootPath: String,
         };
       }
@@ -163,8 +161,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       _routePageChanged(page) {
-        // If no page was found in the route data, page will be an empty string.
-        // Default to 'mouse' in that case.
         this.page = page || 'about';
       }
 
