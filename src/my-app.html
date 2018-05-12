@@ -20,25 +20,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
-<link rel="import" href="my-icons.html">
-<link rel="import" href="common/media-screen.html">
+<link rel="import"href="./my-icons.html">
+<link rel="import"href="./shared-styles.html">
+<link rel="import"href="./common/media-screen.html">
 
-<link rel="lazy-import" href="page-about.html">
-<link rel="lazy-import" href="page-resume.html">
-<link rel="lazy-import" href="page-portfolio.html">
-<link rel="lazy-import" href="page-404.html">
+<link rel="lazy-import"href="./page-about.html">
+<link rel="lazy-import"href="./page-resume.html">
+<link rel="lazy-import"href="./page-portfolio.html">
+<link rel="lazy-import"href="./page-404.html">
 
 <dom-module id="my-app">
   <template>
-    <style>
+    <style include="shared-styles">
       :host {
-        --app-primary-color: #01A7FD;
-        --app-secondary-color: #FFFF8D;
-
         display: block;
         height: 100vh;
-        width: 100vw;
+        width: 100%;
         background-color: #E3E3E3;
         background-size: cover;
       }
@@ -47,7 +46,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: #fff;
         background-color: var(--app-primary-color);
         --paper-tabs-selection-bar-color: var(--app-secondary-color);
-        min-height: 100px;
+        min-height: 150px;
+        z-index: 2;
+      }
+
+      app-header[small] {
+        min-height: 75px;
+      }
+
+      #drawer {
+        z-index: 1;
+        padding-top: 75px;
+      }
+
+      #drawer-content {
+        margin-top: 80px;
+      }
+
+      .drawer-option {
+        padding: 15px;
+        color: var(--app-text-color);
+      }
+
+      .drawer-option > *{
+        margin: 0 15px;
+      }
+
+      .drawer-option[selected] {
+        color: var(--app-primary-color);
       }
 
     </style>
@@ -64,27 +90,41 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         tail="{{subroute}}">
     </app-route>
 
-    <app-header slot="header" condenses reveals effects="waterfall">
-      <app-toolbar>
-        <paper-tabs selected={{page}} attr-for-selected="name">
-          <paper-tab name="about">ABOUT</paper-tab>
-          <paper-tab name="resume">RESUME</paper-tab>
-          <paper-tab name="portfolio">PORTFOLIO</paper-tab>
-        </paper-tabs>
-      </app-toolbar>
-    </app-header>
+    <media-screen small={{small}}></media-screen>
 
-    <iron-pages
-        selected="[[page]]"
-        attr-for-selected="name"
-        fallback-selection="404"
-        role="main">
-      <page-about name="about"></page-about>
-      <page-resume name="resume"></page-resume>
-      <page-portfolio name="portfolio"></page-resume>
-      <page-404 name="404"></page-404>
-    </iron-pages>
+    <app-header-layout has-scrolling-region>
+      <app-header slot="header" condenses reveals effects="waterfall" small$="{{small}}">
+        <app-toolbar>
+          <paper-tabs selected={{page}} attr-for-selected="name" hidden$={{small}}>
+            <paper-tab name="about">ABOUT</paper-tab>
+            <paper-tab name="resume">RESUME</paper-tab>
+            <paper-tab name="portfolio">PORTFOLIO</paper-tab>
+          </paper-tabs>
+          <paper-icon-button id="menuButton" icon="icons:menu" hidden$="{{!small}}" on-click="toggleDrawer"></paper-icon-button>
+        </app-toolbar>
+      </app-header>
 
+      <app-drawer id="drawer" opened$="{{drawerOpened}}" on-opened-changed="handleDrawerToggle">
+        <div id="drawer-content">
+          <iron-selector selected={{page}} attr-for-selected="name" selected-attribute="selected" on-selected-changed="toggleDrawer">
+            <div class="drawer-option" name="about"><iron-icon icon="icons:account-circle"></iron-icon>ABOUT</div>
+            <div class="drawer-option" name="resume"><iron-icon icon="icons:assignment"></iron-icon>RESUME</div>
+            <div class="drawer-option" name="portfolio"><iron-icon icon="icons:work"></iron-icon>PORTFOLIO</div>
+          </iron-selector>
+        </div>
+      </app-drawer>
+
+      <iron-pages
+          selected="[[page]]"
+          attr-for-selected="name"
+          fallback-selection="404"
+          role="main">
+        <page-about name="about"></page-about>
+        <page-resume name="resume"></page-resume>
+        <page-portfolio name="portfolio"></page-resume>
+        <page-404 name="404"></page-404>
+      </iron-pages>
+    </app-header-layout>
   </template>
 
   <script>
@@ -114,6 +154,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         return [
           '_routePageChanged(routeData.page)',
         ];
+      }
+
+      toggleDrawer() {
+        this.$.drawer.toggle();
+      }
+
+      handleDrawerToggle() {
+        let drawer = this.$.drawer;
+        let iconButton = this.$.menuButton;
+        iconButton.icon = drawer.opened ? 'my-icons:arrow-back' : 'icons:menu';
       }
 
       _routePageChanged(page) {
