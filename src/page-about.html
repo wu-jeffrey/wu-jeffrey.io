@@ -21,6 +21,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <dom-module id="page-about">
   <template>
     <style include="shared-styles">
+      :root {
+        --paper-tabs: {
+          height: 75px;
+          color: white;
+        };
+      }
+
       :host {
         display: flex;
         flex-direction: column;
@@ -78,7 +85,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         background-color: #f4425c;
       }
 
-
     </style>
 
     <paper-card class="card">
@@ -109,20 +115,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </div>
       <div class="footer personality">
         <paper-tabs selected={{selectedItem}} attr-for-selected="name">
-          <paper-tab class="tab" name="leadership">
+          <paper-tab name="leadership">
+            <div class="tab" >
             <iron-icon icon="social:people"></iron-icon>
-            test
+            <div>LEADERSHIP</div>
+          </div>
           </paper-tab>
-          <paper-tab class="tab" name="creativity">
-            <iron-icon icon="social:people"></iron-icon>
-            test
+          <paper-tab name="creativity">
+            <div class="tab" >
+            <iron-icon icon="my-icons:lightbulb"></iron-icon>
+            <div>CREATIVITY</div>
+          </div>
           </paper-tab>
-            <paper-tab class="tab" name="teamwork">
-              <iron-icon icon="social:people"></iron-icon>
-            </paper-tab>
-          <paper-tab class="tab" name="leadership">
-            <iron-icon icon="social:people"></iron-icon>
-            <br>
+          <paper-tab name="adaptable">
+            <div class="tab" >
+              <iron-icon icon="my-icons:atom"></iron-icon>
+              <div>ADAPTABLE</div>
+            </div>
           </paper-tab>
         </paper-tabs>
       </div>

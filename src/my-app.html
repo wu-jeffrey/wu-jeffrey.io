@@ -46,7 +46,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: #fff;
         background-color: var(--app-primary-color);
         --paper-tabs-selection-bar-color: var(--app-secondary-color);
-        min-height: 150px;
+        min-height: 90px;
         z-index: 2;
       }
 
@@ -95,7 +95,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <app-header-layout has-scrolling-region>
       <app-header slot="header" condenses reveals effects="waterfall" small$="{{small}}">
         <app-toolbar>
-          <paper-tabs selected={{page}} attr-for-selected="name" hidden$={{small}}>
+          <paper-tabs selected={{page}} attr-for-selected="name" hidden$={{small}} fit-container>
             <paper-tab name="about">ABOUT</paper-tab>
             <paper-tab name="resume">RESUME</paper-tab>
             <paper-tab name="portfolio">PORTFOLIO</paper-tab>
