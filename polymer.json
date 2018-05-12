@@ -4,7 +4,6 @@
   "fragments": [
     "src/page-about.html",
     "src/page-portfolio.html",
-    "src/page-resume.html",
     "src/page-404.html"
   ],
   "sources": [

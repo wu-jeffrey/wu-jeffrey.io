@@ -21,13 +21,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
-<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
 <link rel="import"href="./my-icons.html">
 <link rel="import"href="./shared-styles.html">
 <link rel="import"href="./common/media-screen.html">
 
 <link rel="lazy-import"href="./page-about.html">
-<link rel="lazy-import"href="./page-resume.html">
 <link rel="lazy-import"href="./page-portfolio.html">
 <link rel="lazy-import"href="./page-404.html">
 
@@ -42,25 +40,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         background-size: cover;
       }
 
-      app-header {
-        color: #fff;
-        background-color: var(--app-primary-color);
-        --paper-tabs-selection-bar-color: var(--app-secondary-color);
-        min-height: 90px;
-        z-index: 2;
+      :root {
+        --iron-icon-width: 50px;
       }
 
-      app-header[small] {
-        min-height: 75px;
+      app-header {
+        color: white;
+        background-color: var(--app-primary-color);
+        min-height: 200px;
+         /* z-index: 1; TODO: Refactor */
       }
 
       #drawer {
-        z-index: 1;
-        padding-top: 75px;
+        z-index: 3;
       }
 
       #drawer-content {
-        margin-top: 80px;
+        margin-top: 100px;
       }
 
       .drawer-option {
@@ -74,6 +70,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       .drawer-option[selected] {
         color: var(--app-primary-color);
+      }
+
+      iron-pages > *{
+        z-index: 2;
+        margin: -200px; /* TODO: Refactor */
       }
 
     </style>
@@ -92,27 +93,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <media-screen small={{small}}></media-screen>
 
-    <app-header-layout has-scrolling-region>
-      <app-header slot="header" condenses reveals effects="waterfall" small$="{{small}}">
+    <!-- <app-header-layout has-scrolling-region> -->
+      <app-header slot="header" condenses reveals effects="waterfall">
         <app-toolbar>
-          <paper-tabs selected={{page}} attr-for-selected="name" hidden$={{small}} fit-container>
-            <paper-tab name="about">ABOUT</paper-tab>
-            <paper-tab name="resume">RESUME</paper-tab>
-            <paper-tab name="portfolio">PORTFOLIO</paper-tab>
-          </paper-tabs>
-          <paper-icon-button id="menuButton" icon="icons:menu" hidden$="{{!small}}" on-click="toggleDrawer"></paper-icon-button>
+          <!-- <paper-icon-button id="menuButton" icon="icons:menu" on-click="toggleDrawer"></paper-icon-button> -->
         </app-toolbar>
       </app-header>
 
-      <app-drawer id="drawer" opened$="{{drawerOpened}}" on-opened-changed="handleDrawerToggle">
+      <!-- <app-drawer id="drawer" opened$="{{drawerOpened}}" on-opened-changed="handleDrawerToggle">
         <div id="drawer-content">
           <iron-selector selected={{page}} attr-for-selected="name" selected-attribute="selected" on-selected-changed="toggleDrawer">
             <div class="drawer-option" name="about"><iron-icon icon="icons:account-circle"></iron-icon>ABOUT</div>
-            <div class="drawer-option" name="resume"><iron-icon icon="icons:assignment"></iron-icon>RESUME</div>
             <div class="drawer-option" name="portfolio"><iron-icon icon="icons:work"></iron-icon>PORTFOLIO</div>
           </iron-selector>
         </div>
-      </app-drawer>
+      </app-drawer> -->
 
       <iron-pages
           selected="[[page]]"
@@ -120,16 +115,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           fallback-selection="404"
           role="main">
         <page-about name="about"></page-about>
-        <page-resume name="resume"></page-resume>
         <page-portfolio name="portfolio"></page-resume>
         <page-404 name="404"></page-404>
       </iron-pages>
-    </app-header-layout>
+    <!-- </app-header-layout> -->
   </template>
 
   <script>
-    // Gesture events like tap and track generated from touch will not be
-    // preventable, allowing for better scrolling performance.
     Polymer.setPassiveTouchGestures(true);
 
     class MyApp extends Polymer.Element {
@@ -144,8 +136,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           },
           routeData: Object,
           subroute: Object,
-          // This shouldn't be neccessary, but the Analyzer isn't picking up
-          // Polymer.Element#rootPath
           rootPath: String,
         };
       }
@@ -167,8 +157,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       _routePageChanged(page) {
-        // If no page was found in the route data, page will be an empty string.
-        // Default to 'mouse' in that case.
         this.page = page || 'about';
       }
 

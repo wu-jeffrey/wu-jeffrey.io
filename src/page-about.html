@@ -15,6 +15,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-icon/iron-icon.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../bower_components/paper-tooltip/paper-tooltip.html">
+<link rel="import" href="../bower_components/paper-toast/paper-toast.html">
+<link rel="import" href="../bower_components/paper-tooltip/paper-tooltip.html">
 <link rel="import"href="./shared-styles.html">
 <link rel="import"href="./my-icons.html">
 
@@ -101,9 +104,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </div>
       </div>
       <div class="footer social">
-        <paper-icon-button icon="social-media:github"></paper-icon-button>
-        <paper-icon-button icon="social-media:linkedin"></paper-icon-button>
-        <paper-icon-button icon="mail"></paper-icon-button>
+        <a href="https://github.com/wu-jeffrey" target="_blank" tabindex="-1">
+          <paper-icon-button icon="social-media:github"></paper-icon-button>
+        </a>
+        <a href="https://www.linkedin.com/in/jeff--wu/" target="_blank" tabindex="-1">
+          <paper-icon-button icon="social-media:linkedin"></paper-icon-button>
+        </a>
+        <paper-icon-button id=btn icon="mail" on-click="handleEmailClick"></paper-icon-button>
+        <paper-tooltip for="btn" position="right" animation-delay=0>Jeffrey.wu@uwaterloo.ca</paper-tooltip>
       </div>
     </paper-card>
 
@@ -124,7 +132,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <paper-tab name="creativity">
             <div class="tab" >
             <iron-icon icon="my-icons:lightbulb"></iron-icon>
-            <div>CREATIVITY</div>
+            <div>CREATIVE</div>
           </div>
           </paper-tab>
           <paper-tab name="adaptable">
@@ -136,6 +144,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </paper-tabs>
       </div>
     </paper-card>
+    <paper-toast id="toast">asdasdasd</paper-toast>
   </template>
 
   <script>
@@ -148,6 +157,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             value: "leadership"
           }
         };
+      }
+
+      handleEmailClick() {
+        location.href = "mailto:jeffrey.wu@uwaterloo.ca";
       }
     }
 
