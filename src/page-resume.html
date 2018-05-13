@@ -16,15 +16,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template>
     <style include="shared-styles">
       :host {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
         padding: 10px;
+        text-align: center;
       }
     </style>
 
-    <paper-card heading="Resume" class="card">
+    <paper-card class="card">
       <div class="card-content">
-        <p>Ut labores minimum atomorum pro. Laudem tibique ut has.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
+        <iframe src="../resources/resume.pdf" width="100%" height="100%">
+        This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>
+        </iframe>
       </div>
     </paper-card>
   </template>

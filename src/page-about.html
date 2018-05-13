@@ -80,13 +80,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         height: 250px;
         min-width: 280px;
         width: 100%;
-        background: url("../images/background.jpg");
+        background: url("../resources/images/background.jpg");
         background-size: cover;
         background-position: center center;
       }
 
       #profile {
-        background: url("../images/profile.jpg");
+        background: url("../resources/images/profile.jpg");
         background-color: white;
         background-position: center top;
         background-size: cover;
@@ -238,7 +238,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       meme() {
         if(!this.playing) {
-          this.audio = new Audio('../audio/meme.mp3');
+          this.audio = new Audio('../resources/audio/meme.mp3');
           this.audio.play();
           this.playing = true;
           setTimeout(() => {
