@@ -20,6 +20,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/paper-tooltip/paper-tooltip.html">
 <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
 <link rel="import"href="./my-icons.html">
 <link rel="import"href="./shared-styles.html">
@@ -77,6 +78,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         z-index: 2;
       }
 
+      .social {
+        position: absolute;
+        margin: 0 15px;
+        right: 0;
+        --iron-icon-fill-color: white;
+      }
+
     </style>
 
     <app-location
@@ -97,10 +105,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <app-header slot="header" condenses reveals effects="waterfall">
         <app-toolbar>
           <paper-icon-button id="menuButton" icon="icons:menu" on-click="toggleDrawer"></paper-icon-button>
+          <div class="social">
+            <a href="https://github.com/wu-jeffrey" target="_blank" tabindex="-1">
+              <paper-icon-button icon="social-media:github"></paper-icon-button>
+            </a>
+            <a href="https://www.linkedin.com/in/jeff--wu/" target="_blank" tabindex="-1">
+              <paper-icon-button icon="social-media:linkedin"></paper-icon-button>
+            </a>
+            <paper-icon-button id=btn icon="mail" on-click="handleEmailClick"></paper-icon-button>
+          </div>
         </app-toolbar>
       </app-header>
 
-      <app-drawer id="drawer" opened$="{{drawerOpened}}" on-opened-changed="handleDrawerToggle">
+      <app-drawer id="drawer" opened$="{{drawerOpened}}" on-opened-changed="handleDrawerToggle" swipe-open>
         <div id="drawer-content">
           <iron-selector selected={{page}} attr-for-selected="name" selected-attribute="selected" on-selected-changed="toggleDrawer">
             <div class="drawer-option" name="about"><iron-icon icon="icons:account-circle"></iron-icon>ABOUT</div>
@@ -148,6 +165,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         return [
           '_routePageChanged(routeData.page)',
         ];
+      }
+
+
+      handleEmailClick() {
+        location.href = "mailto:jeffrey.wu@uwaterloo.ca";
       }
 
       toggleDrawer() {
