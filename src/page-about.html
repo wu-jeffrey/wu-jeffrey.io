@@ -55,11 +55,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         text-align: center;
       }
 
-      .card.tools {
-        background-color: #5600E8;
-        color: white;
-      }
-
       .card-content {
         margin: auto;
         left: 0;
@@ -103,8 +98,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         transform: translateY(50%);
       }
 
+      .footer.resume {
+        color: white;
+      }
+
       .footer.personality {
         background-color: #f4425c;
+      }
+
+      a paper-button, a paper-button[focused] {
+        color: white;
+        font-weight: normal;
       }
 
       paper-item {
@@ -134,18 +138,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             I have extensive experience in web app development, UI/UX, graphics design, data visualisation, 3D modeling and more!
           </div>
         </div>
-      </paper-card>
-
-      <paper-card class="card tools">
-        <div class="card-content">
-          <p>Skills</p>
-          <div>
-            <iron-icon icon="my-tools:firebase"></iron-icon>
-            <iron-icon icon="my-tools:node"></iron-icon>
-            <iron-icon icon="icons:polymer"></iron-icon>
-            <iron-icon icon="my-tools:js"></iron-icon>
-            <iron-icon icon="my-tools:git"></iron-icon>
-          </div>
+        <div class="footer resume">
+          <a id="resume-link" href="../resources/resume.pdf" target="_blank">
+            <paper-button>RESUME</paper-button>
+          </a>
         </div>
       </paper-card>
 
