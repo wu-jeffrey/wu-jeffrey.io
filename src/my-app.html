@@ -25,6 +25,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import"href="./my-icons.html">
 <link rel="import"href="./shared-styles.html">
 <link rel="import"href="./common/media-screen.html">
+<link rel="import"href="./common/app-analytics.html">
 
 <link rel="lazy-import"href="./page-about.html">
 <link rel="lazy-import"href="./page-resume.html">
@@ -100,11 +101,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </app-route>
 
     <media-screen small={{small}}></media-screen>
+    <app-analytics key="UA-120213761-1"></app-analytics>
 
     <app-header-layout has-scrolling-region>
-      <app-header slot="header" condenses reveals effects="waterfall">
-        <app-toolbar>
-          <!-- <paper-icon-button id="menuButton" icon="icons:menu" on-click="toggleDrawer"></paper-icon-button> -->
+      <app-header slot="header" condenses fixed effects="waterfall">
+        <app-toolbar sticky>
+          <paper-icon-button id="menuButton" icon="icons:menu" on-click="toggleDrawer"></paper-icon-button>
           <div class="social">
             <a href="https://github.com/wu-jeffrey" target="_blank" tabindex="-1">
               <paper-icon-button icon="social-media:github"></paper-icon-button>
@@ -117,15 +119,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </app-toolbar>
       </app-header>
 
-      <!-- <app-drawer id="drawer" opened$="{{drawerOpened}}" on-opened-changed="handleDrawerToggle" swipe-open>
+      <app-drawer id="drawer" opened$="{{drawerOpened}}" on-opened-changed="handleDrawerToggle" swipe-open>
         <div id="drawer-content">
           <iron-selector selected={{page}} attr-for-selected="name" selected-attribute="selected" on-selected-changed="toggleDrawer">
             <div class="drawer-option" name="about"><iron-icon icon="icons:account-circle"></iron-icon>ABOUT</div>
-            <div class="drawer-option" name="resume"><iron-icon icon="icons:assignment"></iron-icon>RESUME</div>
+            <!-- <div class="drawer-option" name="resume"><iron-icon icon="icons:assignment"></iron-icon>RESUME</div> -->
             <div class="drawer-option" name="portfolio"><iron-icon icon="icons:work"></iron-icon>PORTFOLIO</div>
           </iron-selector>
         </div>
-      </app-drawer> -->
+      </app-drawer>
 
       <iron-pages
           selected="[[page]]"

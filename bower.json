@@ -23,7 +23,8 @@
     "paper-toast": "^2.1.1",
     "paper-item": "^2.1.1",
     "paper-button": "^2.1.1",
-    "iron-collapse": "^2.2.1"
+    "iron-collapse": "^2.2.1",
+    "photo-gallery": "supachailllpay/photo-gallery#^2.0.5"
   },
   "resolutions": {
     "polymer": "^2.0.0"
