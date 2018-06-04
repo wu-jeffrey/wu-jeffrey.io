@@ -10,7 +10,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
-<link rel="import" href="../bower_components/photo-gallery/photo-gallery.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
 <link rel="import" href="./shared-styles.html">
 
 <dom-module id="page-portfolio">
@@ -20,22 +21,83 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
         padding: 10px;
       }
-    </style>
 
-    <paper-card class="card">
-      <photo-gallery height='120'>
-        <div class='item' data-url='https://images.unsplash.com/photo-1500487003906-9baadc8d610d?auto=compress,format&fit=crop&w=334&h=&q=80&aspect-ratio=0.67'></div>
-        <div class='item' data-url='https://images.unsplash.com/photo-1483653085484-eb63c9f02547?auto=compress,format&fit=crop&w=750&h=&q=80&aspect-ratio=1.50'></div>
-        <div class='item' data-url='https://images.unsplash.com/photo-1499958919714-e10d2741a387?auto=compress,format&fit=crop&w=334&h=&q=80&aspect-ratio=0.67'></div>
-        <div class='item' data-url='https://images.unsplash.com/photo-1503263892381-7f7fd5e5ec15?auto=compress,format&fit=crop&w=376&h=&q=80&aspect-ratio=0.75'></div>
-        <div class='item' data-url='https://images.unsplash.com/photo-1429554429301-1c7d5ae2d42e?auto=compress,format&fit=crop&w=750&h=&q=80&aspect-ratio=1.50'></div>
-        <div class='item' data-url='https://images.unsplash.com/photo-1501422955948-a75c84b11ecf?auto=compress,format&fit=crop&w=752&h=&q=80&aspect-ratio=1.50'></div>
-        <div class='item' data-url='https://images.unsplash.com/photo-1455796653466-32048b2b780e?auto=compress,format&fit=crop&w=749&h=&q=80&aspect-ratio=1.50'></div>
-        <div class='item' data-url='https://images.unsplash.com/photo-1463414689943-2aca18b2242b?auto=compress,format&fit=crop&w=750&h=&q=80&aspect-ratio=1.78'></div>
-        <div class='item' data-url='https://images.unsplash.com/photo-1428976365951-b70e0fa5c551?auto=compress,format&fit=crop&w=750&h=&q=80&aspect-ratio=1.50'></div>
-        <div class='item' data-url='https://images.unsplash.com/photo-1500284306430-8f3cad668bb2?auto=compress,format&fit=crop&w=750&h=&q=80&aspect-ratio=1.50'></div>
-      </photo-gallery>
-    </paper-card>
+      [role="main"] {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .card-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .card-heading {
+        margin: 20px 0;
+      }
+
+      .card {
+        width: 220px;
+        margin: 15px auto;
+        text-align: center;
+      }
+
+      .card-content {
+        padding: 16px;
+      }
+
+      .footer {
+        color: white;
+      }
+
+      .image {
+        width: 100%;
+        height: 200px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin-bottom: 20px;
+      }
+
+
+    </style>
+    <section role="main">
+      <h1>Graphics Design</h1>
+      <section class="card-container">
+        <paper-card class="card fx">
+          <div class="card-content">
+            <div class="image" style="background-image: url('src/resources/images/graphics/sweaterSTC.png')"></div>
+          </div>
+          <div class="footer" style="background-color: #7d38d6;">
+            STC Borden
+          </div>
+        </paper-card>
+        <paper-card class="card fx">
+          <div class="card-content">
+            <div class="image" style="background-image: url('src/resources/images/graphics/sweaterMHS.png')"></div>
+          </div>
+          <div class="footer" style="background-color: #7f1500;">
+            Gradwear Merivale
+          </div>
+        </paper-card>
+        <paper-card class="card fx">
+          <div class="card-content">
+            <div class="image" style="background-image: url('src/resources/images/graphics/shirtSP.png')"></div>
+          </div>
+          <div class="footer" style="background-color: #393fd6;">
+            St. Paul's Soccer
+          </div>
+        </paper-card>
+      </section>
+    </section>
   </template>
 
   <script>

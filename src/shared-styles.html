@@ -22,8 +22,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       .card {
         background-color: rgba(255, 255, 255, 1);
-        border-radius: 5px;
+        border-radius: 3px;
         overflow: hidden;
+      }
+
+      .fx {
+          transition: 0.3s;
+      }
+
+      .fx:hover {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        cursor: pointer;
       }
 
       .card-content {
@@ -43,6 +52,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       h1 {
+        margin: 0;
+        color: var(--app-text-color);
+        font-size: 26px;
+        font-weight: normal;
+      }
+
+      h2 {
         margin: 0;
         color: var(--app-text-color);
         font-size: 22px;

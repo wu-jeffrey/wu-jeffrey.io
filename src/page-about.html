@@ -98,7 +98,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         transform: translateY(50%);
       }
 
-      .footer.resume {
+      .footer.social {
         color: white;
       }
 
@@ -138,10 +138,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             I have extensive experience in web app development, UI/UX, graphics design, data visualisation, 3D modeling and more!
           </div>
         </div>
-        <div class="footer resume">
-          <a id="resume-link" href="./resources/resume.pdf" target="_blank">
-            <paper-button>RESUME</paper-button>
-          </a>
+        <div class="footer social">
+          <div class="social">
+            <a href="https://github.com/wu-jeffrey" target="_blank" tabindex="-1">
+              <paper-icon-button icon="social-media:github"></paper-icon-button>
+            </a>
+            <a href="https://www.linkedin.com/in/jeff--wu/" target="_blank" tabindex="-1">
+              <paper-icon-button icon="social-media:linkedin"></paper-icon-button>
+            </a>
+            <paper-icon-button id=btn icon="mail" on-click="handleEmailClick"></paper-icon-button>
+          </div>
         </div>
       </paper-card>
 
