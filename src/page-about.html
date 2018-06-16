@@ -55,6 +55,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         text-align: center;
       }
 
+      .card.skills {
+        color: white;
+        /* min-width: 390px; */
+        background-color: #7d38d6;
+      }
+
+      .card.skills h3 {
+        color: white;
+      }
+
       .card-content {
         margin: auto;
         left: 0;
@@ -132,7 +142,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <div class="card-content profile">
           <h1>Jeffrey Wu</h1>
           <h3>Mechatronics</h3>
-          <div>Hello! <span id="meme" on-click="meme">My name is Jeff</span> and welcome to my website!</div>
+          <div>Hey! <span id="meme" on-click="meme">My name is Jeff</span> and welcome to my website!</div>
           <div class="description">
             I'm currently a student at the University of Waterloo working towards my degree in Mechatronics Engineering.
             I have extensive experience in web app development, UI/UX, graphics design, data visualisation, 3D modeling and more!
@@ -151,7 +161,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </div>
       </paper-card>
 
-      <paper-card class="card personality">
+      <paper-card class="card skills">
+        <div class="card-content">
+          <h3>Skills</h3>
+          <div class="skills-container">
+            <iron-icon icon="my-tools:firebase"></iron-icon>
+            <iron-icon icon="icons:polymer"></iron-icon>
+            <iron-icon icon="my-tools:js"></iron-icon>
+            <iron-icon icon="my-tools:node"></iron-icon>
+            <iron-icon icon="my-tools:html5"></iron-icon>
+            <iron-icon icon="my-tools:css"></iron-icon>
+          </div>
+        </div>
+      </paper-card>
+
+      <!-- <paper-card class="card personality">
         <div class="card-content">
           <iron-pages selected="[[selectedItem]]" attr-for-selected="name">
             <div name="leadership">
@@ -221,7 +245,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </paper-tab>
           </paper-tabs>
         </div>
-      </paper-card>
+      </paper-card> -->
     </section>
 
   </template>
@@ -238,9 +262,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         };
       }
 
+      handleEmailClick() {
+        location.href = "mailto:jeffrey.wu@uwaterloo.ca";
+      }
+
       meme() {
         if(!this.playing) {
-          this.audio = new Audio('./resources/audio/meme.mp3');
+          this.audio = new Audio('./src/resources/audio/meme.mp3');
           this.audio.play();
           this.playing = true;
           setTimeout(() => {

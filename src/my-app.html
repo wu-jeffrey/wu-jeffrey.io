@@ -54,6 +54,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         z-index: 1;
       }
 
+      .title {
+        margin-left: 15px;
+      }
+
       #drawer {
         z-index: 3;
       }
@@ -107,6 +111,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <app-header slot="header" condenses fixed effects="waterfall">
         <app-toolbar sticky>
           <paper-icon-button id="menuButton" icon="icons:menu" on-click="toggleDrawer"></paper-icon-button>
+          <div class="title">Jeffrey Wu</div>
         </app-toolbar>
       </app-header>
 
@@ -160,10 +165,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         ];
       }
 
-
-      handleEmailClick() {
-        location.href = "mailto:jeffrey.wu@uwaterloo.ca";
-      }
 
       toggleDrawer() {
         this.$.drawer.toggle();

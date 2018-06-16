@@ -10,6 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
 <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../bower_components/iron-icon/iron-icon.html">
 <link rel="import" href="./shared-styles.html">
@@ -31,13 +32,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         text-align: center;
       }
 
-      .card-container {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding: 10px;
-        text-align: center;
+      .card-container paper-card {
+        margin: 15px 15px;
       }
 
       .card-heading {
@@ -45,8 +41,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       .card {
-        width: 220px;
+        max-width: 700px;
         margin: 15px auto;
+      }
+
+      .card.small {
+        width: 220px;
         text-align: center;
       }
 
@@ -54,7 +54,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         padding: 16px;
       }
 
-      .footer {
+      .footer, .gimbal {
         color: white;
       }
 
@@ -67,12 +67,44 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         margin-bottom: 20px;
       }
 
+      #modal {
+        z-index: 99;
+        margin-top: 200px;
+        border-radius: 4px;
+        width: 100vw;
+      }
+
+      video {
+        padding: 0;
+        margin: 0;
+      }
+
 
     </style>
+
+    <paper-dialog id="modal" on-iron-overlay-closed="modalClosed">
+      <iron-pages selected="[[selectedItem]]" attr-for-selected="name">
+        <video name="gimbal" id="video" width="180" height="360" controls>
+          <source src="src/resources/video/gimbal.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+
+
+      </iron-pages>
+
+
+    </paper-dialog>
     <section role="main">
-      <h1>Graphics Design</h1>
+
+      <paper-card id="gimbal" image="src/resources/images/gimbal/gimbal2.jpg" class="card">
+        <div class="card-content front gimbal" style="background-color: #01A7FD;">
+          Lego 3-Axis Camera Gimbal
+        </div>
+      </paper-card>
+
       <section class="card-container">
-        <paper-card class="card fx">
+        <paper-card id="SRB" class="card small">
           <div class="card-content">
             <div class="image" style="background-image: url('src/resources/images/graphics/sweaterSTC.png')"></div>
           </div>
@@ -80,7 +112,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             STC Borden
           </div>
         </paper-card>
-        <paper-card class="card fx">
+        <paper-card id="MHS" class="card small">
           <div class="card-content">
             <div class="image" style="background-image: url('src/resources/images/graphics/sweaterMHS.png')"></div>
           </div>
@@ -88,7 +120,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             Gradwear Merivale
           </div>
         </paper-card>
-        <paper-card class="card fx">
+        <paper-card id="SP" class="card small">
           <div class="card-content">
             <div class="image" style="background-image: url('src/resources/images/graphics/shirtSP.png')"></div>
           </div>
@@ -97,12 +129,36 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </div>
         </paper-card>
       </section>
+
+
+
+      <br><br><br>
+      <h1>More projects coming soon...</h1>
     </section>
   </template>
 
   <script>
     class PagePortfolio extends Polymer.Element {
       static get is() { return 'page-portfolio'; }
+      static get properties() {
+        return {
+          selectedItem: {
+            type: String,
+            value: ""
+          }
+        };
+      }
+
+      // openModal(event) {
+      //   this.$.modal.open();
+      //   console.log(event);
+      //   event.stopPropagation();
+      // }
+      //
+      // modalClosed() {
+      //   if(this.$.video.paused) return;
+      //   else this.$.video.pause();
+      // }
     }
 
     window.customElements.define(PagePortfolio.is, PagePortfolio);
