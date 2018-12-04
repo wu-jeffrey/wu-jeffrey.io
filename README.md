@@ -47,4 +47,4 @@ Should look like the snippet below:
 ```
 
 ### 3. Deploy to Firebase
-`Firebase Deploy`
+`firebase deploy`
