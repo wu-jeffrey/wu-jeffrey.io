@@ -1,27 +1,32 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import * as ROUTES from '../../constants/routes';
 
 import { Menu } from 'antd';
 import "antd/dist/antd.css";
 
+const containerStyle = {
+  display: 'block'
+}
+
 const menuStyle = {
-  // lineHeight: '64px',
+  // position: "absolute",
   display: 'flex',
   justifyContent: 'center',
-  padding: '10px'
+  border: 'none',
+  backgroundColor: "transparent"
 };
 
 const menuItemStyle = {
   margin: '10px'
 };
 
-const Navigation = () => (
-  <div>
+const component = ({location, route, params}) => (
+  <div style={containerStyle}>
     <Menu
       mode="horizontal"
-      defaultSelectedKeys={['1']}
+      selectedKeys={[getCurrentPage(location)]}
       style={menuStyle}
     >
       <Menu.Item style={menuItemStyle} key="1">
@@ -31,7 +36,19 @@ const Navigation = () => (
         <Link to={ROUTES.PORTFOLIO}>Portfolio</Link>
       </Menu.Item>
     </Menu>
+    
   </div>
 );
+
+const getCurrentPage = (location) => {
+  const pageSchema = {
+    home: "1",
+    portfolio: "2"
+  };
+  let locationStr = location.pathname.substr(1);
+  return pageSchema[locationStr] || "1";
+}
+
+const Navigation = withRouter(component);
 
 export default Navigation;

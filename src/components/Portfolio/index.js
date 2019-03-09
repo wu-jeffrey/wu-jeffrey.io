@@ -1,8 +1,7 @@
 import React from 'react';
 
 const Portfolio = () => (
-  <div>
-    <h1>Portfolio</h1>
+  <div style={{backgroundColor:'orange', minHeight: 2500}}>
   </div>
 );
 
