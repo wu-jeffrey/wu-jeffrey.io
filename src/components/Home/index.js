@@ -24,7 +24,7 @@ class Home extends React.Component {
 //       - Icons
 //       - redesign volunteer section, inset shadow is weird
 
-  maxTilt = 6; // Degrees of slanted banner thing
+  maxTilt = 4; // Degrees of slanted banner thing
   constructor(props) {
     super(props);
     this.state = {
@@ -165,7 +165,7 @@ class Home extends React.Component {
                 Volunteer Work
               </h1>
               <p style={{marginTop: 10, color: "white", }}>
-                From working with a local political candidate to being elected as student body president, <br/>I've had many amazing opportunities to organize and participate in awesome events and unique initiatives. <br/>The two below are just ones that I'm particularly fond of.
+                I've had many amazing opportunities to organize and participate in awesome events and unique initiatives. <br/>The two below are just ones that I'm particularly fond of.
               </p>
               <Card style={styles.volunteerCardStyle}>
                 <div>
