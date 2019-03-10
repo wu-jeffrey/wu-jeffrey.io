@@ -16,23 +16,23 @@
 
 ## Deployment
 
-1. Firebase-CLI tools installed `!= true`
-  1.1 Install
-  - `npm install -g firebase tools`
-  - `firebase login`
-  1.2 Init
-  - `firebase init`
+### 1. Firebase-CLI tools installed != true
+  #### 1.1 Install
+  `npm install -g firebase tools`
+  `firebase login`
+  #### 1.2 Init
+  `firebase init`
   - only firestore and hosting for now
   - default firestore settings for now
   - yes to SPA for react router to handle
-  - `build` when asked for build folder
+  - type `build` when asked for build folder
  
-2. Build react app
-  2.1 Delete boilerplate from firebase init, or if already there go to `2.2`
-  2.2 Build
-  - `npm run build`
+### 2. Build react app
+  #### 2.1 Delete `build/index.html` firebase init
+  #### 2.2 Build
+  `npm run build`
  
-3. Deploy to firebase hosting
-  2.1 `firebase deploy`
+### 3. Deploy to firebase hosting
+  #### 2.1 `firebase deploy`
   
-4. Fingers crossed nothing explodes
+### 4. Fingers crossed nothing explodes
