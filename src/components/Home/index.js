@@ -12,6 +12,7 @@ import {
   Button,
 } from 'antd';
 import * as styles from './styleConst';
+import * as icons from './icons';
 class Home extends React.Component {
 // TODO: - Replace all <br>
 //       - Refactor Style const
@@ -94,19 +95,19 @@ class Home extends React.Component {
             <div style={styles.bodyStyle}>
               <div style={styles.bubbleWrapper}>
                 <div style={styles.bubbleStyle}>
-                  <Icon type="code" theme="twoTone" />
+                  <Icon component={icons.code} />
                 </div>
                 <h2 style={{color: "white", marginTop: 5, textAlign: "center"}}>Developer</h2>
               </div>
               <div style={styles.bubbleWrapper}>
                 <div style={styles.bubbleStyle}>
-                  <Icon type="code" theme="twoTone" />
+                  <Icon component={icons.paintbrush} />
                 </div>
                 <h2 style={{color: "white", marginTop: 5, textAlign: "center"}}>Designer</h2>
               </div>
               <div style={styles.bubbleWrapper}>
                 <div style={styles.bubbleStyle}>
-                  <Icon type="code" theme="twoTone" />
+                  <Icon component={icons.backpack} />
                 </div>
                 <h2 style={{color: "white", marginTop: 5, textAlign: "center"}}>Student</h2>
               </div>
@@ -124,7 +125,7 @@ class Home extends React.Component {
               >
                 <div>
                   <div style={styles.logoIconStyleMitre}>
-                    <Icon type="code" theme="twoTone" />
+                    <Icon component={icons.mitreSvg} />
                   </div>
                   <h2>Mitre Media</h2>
                   Web Developer
@@ -144,7 +145,7 @@ class Home extends React.Component {
               >
                 <div>
                   <div style={styles.logoIconStyleUnyte}>
-                    <Icon type="code" theme="twoTone" />
+                    <Icon component={icons.unyteSvg} />
                   </div>
                   <h2>Unyte Health</h2>
                   Software Developer

@@ -52,7 +52,7 @@ export const cardStyle = {
   textAlign: "left",
   right: 0,
   left: 0,
-  margin: "30px auto",
+  margin: "50px auto",
   maxWidth: 1000,
   boxShadow: "0 8px 16px 0 rgba(0,0,0,0.2)",
 }
@@ -70,7 +70,7 @@ export const logoIconStyleMitre = {
   height: 60,
   borderRadius: "100%",
   fontSize: 30,
-  transform: "translate(-50%, 15%)",
+  transform: "translate(-50%, -50%)",
   boxShadow: "0 8px 16px 0 rgba(0,0,0,0.2)",
 }
 
@@ -87,7 +87,7 @@ export const logoIconStyleUnyte = {
   height: 60,
   borderRadius: "100%",
   fontSize: 30,
-  transform: "translate(-50%, 15%)",
+  transform: "translate(-50%, -50%)",
   boxShadow: "0 8px 16px 0 rgba(0,0,0,0.2)",
 }
 
