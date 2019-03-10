@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { FirebaseContext } from '../Firebase';
-import SkillsList from './skillsList';
+// import SkillsList from './skillsList';
 import {
   Card,
   Icon,
@@ -86,7 +86,7 @@ class Home extends React.Component {
               <div style={this.state.rotateStyle}>
               
               </div>
-              <p style={{fontSize: "1.1rem", padding: "0 15px", position: "absolute", left:0, right: 0, bottom: 0, margins: "20px auto", zIndex: 1, color: "white", fontWeight: 500}}>I'm currently a Mechatronics Engineering Student at uWaterloo <br/> with interest in Software Engineering, ML & Machine Vision, Robotics and Biomechanics.</p>
+              <p style={{fontSize: "1.1rem", padding: "0 15px", position: "absolute", left:0, right: 0, bottom: 0, margins: "20px auto", zIndex: 1, color: "white", fontWeight: 500}}>I'm  a Mechatronics Engineering Student at uWaterloo <br/> with interest in Software Engineering, ML & Machine Vision, Robotics and Biomechanics.</p>
 
             </section>
             
@@ -208,8 +208,6 @@ class Home extends React.Component {
                 During my summer break in my sophomore year, I volunteered for the OCCSC. My job was to teach English to seniors who immigrated after their children to Canada. I created lesson plans with themes such as "how to take public transit", "how to go grocery shopping", etc. Each lesson consisted of key vocabulary and common phrases that could be responded to straightforwardly. I later had the idea of evolving the lessons to using technology (i.e. what to do when the wifi stopped working, how to send a WeChat message to their family, etc.). The lessons were very well received and I was particularly passionate about this unique opportunity as my grandparents too, were in the same situation when they came to Canada to help raise me after my parents immigrated. 
               </Card>
             </section>
-
-            <section style={{height: 300, background: "#ea4335"}}></section>
           </div>
         );
       }}
