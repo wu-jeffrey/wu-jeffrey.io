@@ -64,7 +64,6 @@ class Home extends React.Component {
         transform: `rotate(${angle}deg)  translateX(-5%)`
       }
     });
-    console.log(window.scrollY)
   }
 
   render() { return (
@@ -206,7 +205,7 @@ class Home extends React.Component {
                   Summer 2015
                 </div>
                 <Divider/>
-                During my summer break in my sophomore year, I volunteered for the OCCSC. My job was to teach English to seniors who immigrated after their children to Canada. I created lesson plans with themes such as "how to take public transit", "how to go grocery shopping", etc. Each lesson consisted of key vocabulary and common phrases that could be responded to straightforwardly. I later had the idea of evolving the lessons to using technology (i.e. what to do when the wifi stopped working, how to send a WeChat message to their family, etc.). The lessons were very well received and I was particularly passionate about this unique opportunity as my grandparents too, were in the same situation when they came to Canada to help raise me after my parents immigrated. 
+                During my summer break in my sophomore year, I volunteered for the OCCSC. <strong>My job was to teach English to seniors who immigrated after their children to Canada.</strong> I created lesson plans with themes such as "how to take public transit", "how to go grocery shopping", etc. Each lesson consisted of key vocabulary and common phrases that could be responded to straightforwardly. I later had the idea of evolving the lessons to using technology (i.e. what to do when the wifi stopped working, how to send a WeChat message to their family, etc.). The lessons were very well received and <strong>I was particularly passionate about this unique opportunity as my grandparents too, were in the same situation when they came to Canada to help raise me after my parents immigrated.</strong>
               </Card>
             </section>
           </div>

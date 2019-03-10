@@ -102,5 +102,5 @@ export const volunteerCardStyle = {
   right: 0,
   left: 0,
   margin: "30px auto",
-  boxShadow: "inset 0 0 16px 10px rgba(0,0,0,0.2)",
+  boxShadow: "inset 0 0 20px 3px rgba(0,0,0,0.2)",
 }
