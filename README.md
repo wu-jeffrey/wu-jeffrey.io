@@ -16,7 +16,7 @@
 
 ## Deployment
 
-### 1. Firebase-CLI tools installed != true
+### 1. Install Firebase-CLI tools (Skip to step 2 if installed)
   #### 1.1 Install
   `npm install -g firebase tools`
   `firebase login`
