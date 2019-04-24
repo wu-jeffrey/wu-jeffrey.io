@@ -25,7 +25,7 @@
   - only firestore and hosting for now
   - default firestore settings for now
   - yes to SPA for react router to handle
-  - type `build` when asked for build folder
+  - type `build` when asked for build folder. This will deploy the files in the "build folder" created in step 2
  
 ### 2. Build react app
   #### 2.1 Delete `build/index.html` firebase init
