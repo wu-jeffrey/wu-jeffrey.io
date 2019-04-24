@@ -1,9 +1,7 @@
 import React from 'react';
-import { FirebaseContext } from '../Firebase';
 import {
   Card,
   Icon,
-  Button,
 } from 'antd';
 import "./interactiveCard.scss"
 
@@ -20,7 +18,7 @@ class InteractiveCard extends React.Component {
     
     const target = e.target.tagName;
 
-    if(target == "DIV" || target == "IMG") {
+    if(target === "DIV" || target === "IMG") {
       let current = this.state.clicked;
       this.setState({clicked: !current})
     }

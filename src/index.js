@@ -6,6 +6,9 @@ import * as serviceWorker from './serviceWorker';
 
 import App from './components/App';
 import Firebase, { FirebaseContext } from './components/Firebase';
+import ReactGA from 'react-ga'
+
+ReactGA.initialize('UA-120213761-1')
 
 ReactDOM.render(
     <FirebaseContext.Provider value={new Firebase()}>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
+  Router,
   Route,
 } from 'react-router-dom';
 
@@ -8,6 +8,8 @@ import Navigation from '../Navigation';
 import HomePage from '../Home';
 import PortfolioPage from '../Portfolio';
 import * as ROUTES from '../../constants/routes';
+import ReactGA from 'react-ga';
+import createHistory from 'history/createBrowserHistory'
 
 import AdminPage from '../Admin';
 import { Layout } from 'antd';
@@ -28,19 +30,30 @@ const footerStyle = {
   color: "white"
 }
 
-const App = () => (
-  <Router>
-    <div style={pageContainerStyle}>
-      <Navigation />
-      <Content style={contentStyle}>
-        <Route exact path={ROUTES.ROOT} component={HomePage} />
-        <Route path={ROUTES.HOME} component={HomePage} />
-        <Route path={ROUTES.PORTFOLIO} component={PortfolioPage} />
-        <Route path={ROUTES.ADMIN} component={AdminPage} />
-      </Content>
-      <Footer style={footerStyle}>Jeffrey Wu © 2019</Footer>
-    </div>
-  </Router>
-);
+const history = createHistory()
+history.listen(location => {
+	ReactGA.pageview(location.pathname)
+})
 
-export default App;
+export default class App extends React.Component {
+  componentDidMount() {
+		ReactGA.pageview(window.location.pathname)
+	}
+
+	render() {
+    return (
+      <Router history={history}>
+        <div style={pageContainerStyle}>
+          <Navigation />
+          <Content style={contentStyle}>
+            <Route exact path={ROUTES.ROOT} component={HomePage} />
+            <Route path={ROUTES.HOME} component={HomePage} />
+            <Route path={ROUTES.PORTFOLIO} component={PortfolioPage} />
+            <Route path={ROUTES.ADMIN} component={AdminPage} />
+          </Content>
+          <Footer style={footerStyle}>Jeffrey Wu © 2019</Footer>
+        </div>
+      </Router>
+    );
+  }
+}
