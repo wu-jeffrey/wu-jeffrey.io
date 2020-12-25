@@ -1,20 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { motion, useAnimation } from 'framer-motion';
 
 export function NavLink({ to, children }) {
   return (
-    <div>
+    <motion.div
+      style={{ padding: 12, borderRadius: 100 }}
+      whileHover={{
+        y: -10
+      }}>
       <Link
         to={to}
-        style={{
-          textDecoration: 'none',
-          color: 'black',
-        }}
+        style={{ textDecoration: 'none', color: 'black', zIndex: 1 }}
       >
         {children}
       </Link>
-    </div>
+    </motion.div>
   );
 }
 
@@ -27,7 +29,12 @@ export function Navbar() {
   return (
     <div style={{
       display: 'flex',
-      justifyContent: 'space-around',
+      justifyContent: 'space-between',
+      position: 'absolute',
+      bottom: 0,
+      width: '100%',
+      padding: '32px 64px',
+      boxSizing: 'border-box',
     }}
     >
       <NavLink to="/home">Home</NavLink>

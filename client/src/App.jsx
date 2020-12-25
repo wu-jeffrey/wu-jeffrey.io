@@ -13,13 +13,13 @@ import './App.css';
 function AnimatedSwitch() {
   const location = useLocation();
   return (
-    <>
+    <div className="Content">
       <Switch location={location} key={location.pathname}>
         <Route exact path="/" component={HomePage} />
         <Route path="/home" component={HomePage} />
       </Switch>
       <Navbar />
-    </>
+    </div>
   );
 }
 
