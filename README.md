@@ -1,24 +1,18 @@
-# README
+# Jeff W's Personal Website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Architecture
+- Rails backend with statically served react build
+- Static HTML pages for admin to create blog posts / add skills and such
+- MySQL DB
 
-Things you may want to cover:
 
-* Ruby version
+## Setup
+`bundle install`
+`rails db:create db:migrate`
+`rails s`
 
-* System dependencies
+`cd client`
+`yarn install`
+`yarn start`
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+React i.e. `/client` should be configured to have a development proxy server set to the Rails port
