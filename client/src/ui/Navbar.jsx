@@ -1,18 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { motion, useAnimation } from 'framer-motion';
+import { Link, useHistory } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 export function NavLink({ to, children }) {
+  const history = useHistory();
+
   return (
     <motion.div
-      style={{ padding: 12, borderRadius: 100 }}
+      style={{ padding: 12, cursor: 'pointer', color: 'rgb(105,105,105)' }}
       whileHover={{
-        y: -10
-      }}>
+        color: 'rgb(234, 51, 64)',
+        y: -10,
+      }}
+      // Onclick makes it so that click after elem has moved still works
+      onClick={() => {
+        history.push(to)
+      }}
+    >
       <Link
         to={to}
-        style={{ textDecoration: 'none', color: 'black', zIndex: 1 }}
+        style={{ textDecoration: 'none', color: 'inherit' }}
       >
         {children}
       </Link>
@@ -28,19 +36,27 @@ NavLink.propTypes = {
 export function Navbar() {
   return (
     <div style={{
+      padding: "32px 64px",
+      width: '100%',
       display: 'flex',
-      justifyContent: 'space-between',
       position: 'absolute',
       bottom: 0,
-      width: '100%',
-      padding: '32px 64px',
+      justifyContent: 'center',
       boxSizing: 'border-box',
     }}
     >
-      <NavLink to="/home">Home</NavLink>
-      <NavLink to="/about">About Me</NavLink>
-      <NavLink to="/projects">Projects</NavLink>
-      <NavLink to="/resume">Resume</NavLink>
+      <div style={{
+        display: 'flex',
+        width: '100%',
+        justifyContent: 'space-between',
+        maxWidth: 600,
+      }}
+      >
+        <NavLink to="/home">Home</NavLink>
+        <NavLink to="/about">About Me</NavLink>
+        <NavLink to="/projects">Projects</NavLink>
+        <NavLink to="/resume">Resume</NavLink>
+      </div>
     </div>
   );
 }
