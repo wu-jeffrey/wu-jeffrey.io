@@ -1,0 +1,20 @@
+.Home {
+  max-width: 1200px;
+  font-family: RedHat;
+  padding: 24px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.header {
+  font-size: large;
+  margin-bottom: 32px;
+}
+
+.hero {
+  font-size: xx-large;
+  display: flex;
+  justify-content: center;
+}

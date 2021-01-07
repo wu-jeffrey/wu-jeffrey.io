@@ -10,18 +10,16 @@ const config = {
   messagingSenderId: "346449426694",
 };
 
-class Firebase {
+export class Firebase {
   constructor() {
     firebase.initializeApp(config);
 
     this.db = firebase.firestore();
   }
 
-  queryDatabase = (collection) => this.db.collection(collection).get().then(function(querySnapshot) {
+  queryDatabase = (collection) => this.db.collection(collection).get().then(function (querySnapshot) {
     return querySnapshot;
-  }).catch(function(error) {
+  }).catch(function (error) {
     console.log("Error getting documents: ", error);
   });
 }
-
-export default Firebase;

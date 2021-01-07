@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'RedHat';
+  src: local('RedHat'), url(./fonts/Red_Hat_Display/RedHatDisplay-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'RedHat';
+  font-weight: 900;
+  src: local('RedHat'), url(./fonts/Red_Hat_Display/RedHatDisplay-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'RedHat';
+  font-weight: 900;
+  src: local('RedHat'), url(./fonts/Red_Hat_Display/RedHatDisplay-Black.ttf) format('truetype');;
+}
+
+
+.App {
+  font-family: 'RedHat';
+}
