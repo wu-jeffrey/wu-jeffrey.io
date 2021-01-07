@@ -139,6 +139,7 @@ export function GeometricArt() {
           <motion.rect x="300" y="300" rx="10" width="60" height="60" fill="#00ffbf" style={{ filter: 'url(#glow)' }} />
           <motion.rect x="300" y="300" rx="10" width="60" height="60" fill="#00ffbf" />
         </motion.g>
+        {generateShootingStars}
         <motion.g
           animate={{
             translateY: [0, 40, 0],
@@ -170,7 +171,6 @@ export function GeometricArt() {
           <motion.text x={"220"} y={"250"} rotate={-10} fill="#EB4B4B" style={{ fontSize: 200, fontWeight: 'bold' }}>W</motion.text>
         </motion.g>
         {generateDonuts}
-        {generateShootingStars}
       </motion.svg>
     </motion.div >
   )
