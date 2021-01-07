@@ -1,5 +1,4 @@
 .Home {
-  max-width: 1200px;
   font-family: RedHat;
   padding: 24px;
 }
@@ -9,8 +8,9 @@
 }
 
 .header {
+  max-width: 1200px;
   font-size: large;
-  margin-bottom: 32px;
+  margin: auto auto 64px auto;
 }
 
 .hero {
