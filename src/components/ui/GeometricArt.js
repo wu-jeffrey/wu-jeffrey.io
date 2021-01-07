@@ -41,7 +41,7 @@ export function GeometricArt() {
         // Length needs to be dynamic if we're doing resizing of the svg
         const length = 396;
 
-        // generate random at the bottom edges, i.e. bigX bigY, midX bigY, bigX, midY
+        // generate random at the lower RHS, which is the 15% between 80-95% of L&W
         const p0 = {
           x: Math.floor(Math.random() * (width * 0.15)) + width * 0.8,
           y: Math.floor(Math.random() * (height * 0.15)) + height * 0.8
@@ -88,15 +88,20 @@ export function GeometricArt() {
     <motion.div style={{ zIndex: -10, marginLeft: 32 }} initial={{ opacity: 0, rotate: 50 }} animate={{ opacity: 1, rotate: 0 }}>
       <motion.svg height={height} width={width}>
         <defs>
-          <pattern id="diagonalHatch" width="10" height="10" patternTransform="rotate(20 0 0)" patternUnits="userSpaceOnUse">
+          {/* unused hatching pattern */}
+          {/* <pattern id="diagonalHatch" width="10" height="10" patternTransform="rotate(20 0 0)" patternUnits="userSpaceOnUse">
             <line x1="0" y1="0" x2="0" y2="10" style={{ stroke: 'rgb(24, 144,255)', strokeWidth: 10 }} />
-          </pattern>
+          </pattern> */}
           <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
             <feGaussianBlur stdDeviation="10 10" result="glow" />
             <feMerge>
               <feMergeNode in="glow" />
             </feMerge>
           </filter>
+          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style={{ stopColor: "rgb(255,255,0)", stopOpacity: 1 }} />
+            <stop offset="100%" style={{ stopColor: "rgb(255,0,0)", stopOpacity: 1 }} />
+          </linearGradient>
         </defs>
         <motion.g
           animate={{ translateY: [0, -20, 0], rotate: [3, -2, 3] }}
@@ -108,6 +113,21 @@ export function GeometricArt() {
           }}>
           <motion.polygon points="60 50, 300 50, 180 300" fill="rgb(24, 144,255)" style={{ filter: 'url(#glow)' }} />
           <motion.polygon points="60 50, 300 50, 180 300" fill="rgb(24, 144,255)" />
+        </motion.g>
+        <motion.g
+          animate={{
+            translateY: [0, -70, 0],
+            translateX: [0, -50, 0],
+            rotate: [180, -160, 180],
+
+          }}
+          transition={{
+            duration: 7,
+            ease: 'easeInOut',
+            loop: Infinity,
+          }}>
+          <motion.circle rotate="180" r="40" cx="120" cy="330" fill="url(#grad1)" style={{ filter: 'url(#glow)' }} />
+          <motion.circle r="40" cx="120" cy="330" fill="url(#grad1)" />
         </motion.g>
         <motion.g
           animate={{ translateY: [0, -50, 0], rotate: [20, -20, 20] }}
