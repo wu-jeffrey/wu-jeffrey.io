@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 import './Home.css'
 import { GeometricArt } from '../ui/GeometricArt'
+import { Experience } from './sections/Experience'
 
 export function Home() {
   return (
@@ -26,12 +27,12 @@ export function Home() {
               <Button
                 href="https://www.linkedin.com/in/jeff--wu/"
                 type="primary"
-                shape="circle"
-                icon={<LinkedinOutlined />} />
+                shape="round"
+                icon={<LinkedinOutlined />}>Linkedin</Button>
               <Button
                 href="https://github.com/wu-jeffrey"
-                shape="circle"
-                icon={<GithubOutlined />} />
+                shape="round"
+                icon={<GithubOutlined />}>Github</Button>
             </Space>
           </motion.div>
         </AnimatePresence>
@@ -39,6 +40,7 @@ export function Home() {
           <GeometricArt />
         </div>
       </div>
+      <Experience />
     </div>
   );
 }

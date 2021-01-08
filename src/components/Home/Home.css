@@ -1,6 +1,5 @@
 .Home {
   font-family: RedHat;
-  padding: 24px;
 }
 
 .bold {
@@ -11,6 +10,7 @@
   max-width: 1200px;
   font-size: large;
   margin: auto auto 64px auto;
+  padding: 24px;
 }
 
 .hero {
