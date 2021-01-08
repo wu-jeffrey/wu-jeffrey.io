@@ -1,0 +1,13 @@
+.Projects {
+  padding: 24px 32px;
+  background-color: #1C202B;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.white {
+  text-align: "center";
+  color: white;
+}

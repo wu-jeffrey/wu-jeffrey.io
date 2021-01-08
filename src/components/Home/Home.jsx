@@ -1,11 +1,12 @@
 import React from 'react';
-import { Button, Space } from 'antd';
+import { Button, Space, Layout } from 'antd';
 import { GithubOutlined, LinkedinOutlined } from '@ant-design/icons';
 import { motion, AnimatePresence } from 'framer-motion'
 
 import './Home.css'
 import { GeometricArt } from '../ui/GeometricArt'
 import { Experience } from './sections/Experience'
+import { Projects } from './sections/Projects'
 
 export function Home() {
   return (
@@ -41,6 +42,8 @@ export function Home() {
         </div>
       </div>
       <Experience />
+      <Projects />
+      <Layout.Footer>Copyright © Jeffrey Wu {(new Date()).getFullYear()}</Layout.Footer>
     </div>
   );
 }
