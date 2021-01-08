@@ -26,7 +26,7 @@ export function Projects() {
         { url: "/images/project-images/entry-reno/5.jpg", label: "before2" },
         { url: "/images/project-images/entry-reno/6.jpg", label: "after2" },
       ],
-      action: <Button type="primary" shape="round" href="/articles/1">Read More</Button>,
+      // action: <Button type="primary" shape="round" href="/articles/1">Read More</Button>,
     },
     {
       name: 'Bolt',
