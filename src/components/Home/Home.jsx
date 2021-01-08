@@ -43,7 +43,7 @@ export function Home() {
       </div>
       <Experience />
       <Projects />
-      <Layout.Footer>Copyright © Jeffrey Wu {(new Date()).getFullYear()}</Layout.Footer>
+      <Layout.Footer>Jeffrey Wu © {(new Date()).getFullYear()}</Layout.Footer>
     </div>
   );
 }

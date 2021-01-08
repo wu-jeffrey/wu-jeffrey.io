@@ -78,8 +78,8 @@ export function Experience() {
         }
       </Space>
       <Space style={{ marginTop: 24 }}>
-        <Button type="primary" shape="round">Open Resume</Button>
-        <Button shape="round" onClick={toggleJobList}>Show More</Button>
+        {/* <Button type="primary" shape="round">Open Resume</Button> */}
+        <Button shape="round" onClick={toggleJobList}>{jobs.length === 3 ? "Show More" : "Hide"}</Button>
       </Space>
     </div>
   );
