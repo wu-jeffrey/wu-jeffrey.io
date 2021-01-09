@@ -104,7 +104,7 @@ export function Projects() {
           <p>I never ended up building it because after construction, I wouldn't have enough money for PC parts!
             <span role='img' aria-label="emoji"> 😅</span>
           </p>
-          <p>It was designed to house a full sized GPU and mini-itx Motherboard.</p>
+          <p>It was designed to house a full sized GPU and mini-itx motherboard.</p>
           <p>I also made an option for passive cooling using heat fins built into the exterior of the case!</p>
         </>
       ),

@@ -15,7 +15,22 @@
   src: local('RedHat'), url(./fonts/Red_Hat_Display/RedHatDisplay-Black.ttf) format('truetype');;
 }
 
-
 .App {
   font-family: 'RedHat';
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.header {
+  max-width: 1200px;
+  font-size: large;
+  margin: auto auto 24px auto;
+  padding: 24px;
+}
+
+.header > a {
+  color: black;
+  text-decoration: none;
 }
