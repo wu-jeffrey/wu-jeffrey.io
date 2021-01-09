@@ -171,7 +171,7 @@ export function Projects() {
 
   return (
     <div className='Projects'>
-      <motion.h1 id="Projects" className="bold white" initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>Projects</motion.h1>
+      <motion.h1 id="projects" className="bold white" initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>Projects</motion.h1>
       <Space direction="vertical" align="center">
         {
           projects.map((project, i) => (
