@@ -78,7 +78,7 @@ export function Experience() {
         }
       </Space>
       <Space style={{ marginTop: 24 }}>
-        {/* <Button type="primary" shape="round">Open Resume</Button> */}
+        <Button type="primary" shape="round" href="/files/resume.pdf" target="_blank">Open Resume</Button>
         <Button shape="round" onClick={toggleJobList}>{jobs.length === 3 ? "Show More" : "Hide"}</Button>
       </Space>
     </div>
