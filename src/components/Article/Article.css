@@ -1,0 +1,13 @@
+.Article {
+  display: flex;
+
+}
+
+.left-col {
+  padding: 0 24px;
+  height: 100%;
+}
+
+.right-col {
+  margin-left: 24px;
+}
