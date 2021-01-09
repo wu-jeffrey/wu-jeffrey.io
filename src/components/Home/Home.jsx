@@ -23,11 +23,13 @@ export function Home() {
             <Space>
               <Button
                 href="https://www.linkedin.com/in/jeff--wu/"
+                target="_blank"
                 type="primary"
                 shape="round"
                 icon={<LinkedinOutlined />}>Linkedin</Button>
               <Button
                 href="https://github.com/wu-jeffrey"
+                target="_blank"
                 shape="round"
                 icon={<GithubOutlined />}>Github</Button>
             </Space>
