@@ -16,7 +16,7 @@ export function Projects() {
       description: (
         <>
           <p>I learned how to tile floors, install baseboards, wire light fixtures and switches, install toilets, plumb sink traps and more!</p>
-          <p>There's alot of clever engineering in our homes that we take for granted!</p>
+          <p>There's a lot of clever engineering in our homes that we take for granted!</p>
         </>
       ),
       images: [
