@@ -26,7 +26,7 @@ export function Projects() {
         { url: "/images/project-images/entry-reno/5.jpg", label: "before2" },
         { url: "/images/project-images/entry-reno/6.jpg", label: "after2" },
       ],
-      // action: <Button type="primary" shape="round" href="/articles/1">Read More</Button>,
+      action: <Button disabled shape="round" href="/articles/0">Article Coming Soon!</Button>,
     },
     {
       name: 'Bolt',
@@ -44,8 +44,24 @@ export function Projects() {
       ]
     },
     {
+      name: '3D printed glasses',
+      subtitle: '(Emergency Project 2019)',
+      description: (
+        <>
+          <p>I broke a leg on my glasses but didn't have time to wait for another pair... I had class to attend!</p>
+          <p>After some measuring 3D modelling, and lots of squinting, I was able to successfully retrofit my old lenses into the 3D printed frame.</p>
+          <p>A full writeup of the challenges I faced is coming soon! (As soon as I build out an article feature on this website... 😅)</p>
+        </>
+      ),
+      images: [
+        { url: "/images/project-images/glasses/1.jpg", label: "glasses1" },
+        { url: "/images/project-images/glasses/2.jpg", label: "glasses2" },
+      ],
+      action: <Button disabled shape="round" href="/articles/0">Article Coming Soon!</Button>,
+    },
+    {
       name: 'Nutrition Tracker V2',
-      subtitle: '(Personal Project 2020)',
+      subtitle: '(Personal Project 2019)',
       description: (
         <>
           <p>I previously made a nutrition tracker as a way to learn Rails</p>
