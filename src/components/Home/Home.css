@@ -1,0 +1,10 @@
+.Home {
+  font-family: RedHat;
+}
+
+.hero {
+  margin-top: 64px;
+  font-size: xx-large;
+  display: flex;
+  justify-content: center;
+}

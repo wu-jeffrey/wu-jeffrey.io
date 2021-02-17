@@ -4,17 +4,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
-import App from './components/App';
-import Firebase, { FirebaseContext } from './components/Firebase';
+import App from './App';
 import ReactGA from 'react-ga'
 
 ReactGA.initialize('UA-120213761-1')
 
 ReactDOM.render(
-    <FirebaseContext.Provider value={new Firebase()}>
-        <App /> 
-    </FirebaseContext.Provider>,
-    document.getElementById('root'),
+  <App />,
+  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change

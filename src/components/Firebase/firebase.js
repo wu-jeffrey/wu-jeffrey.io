@@ -1,5 +1,5 @@
-import * as firebase from 'firebase';
-import 'firebase/firestore'
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 
 const config = {
   apiKey: "AIzaSyDqfcJgJi4wR6nUn-s986qHQsDj5QHX1Bo",
@@ -10,18 +10,20 @@ const config = {
   messagingSenderId: "346449426694",
 };
 
-class Firebase {
+export class Firebase {
   constructor() {
-    firebase.initializeApp(config);
+    if (!firebase.apps.length) {
+      firebase.initializeApp(config)
+    } else {
+      firebase.app(); // if already initialized, use that one
+    }
 
     this.db = firebase.firestore();
   }
 
-  queryDatabase = (collection) => this.db.collection(collection).get().then(function(querySnapshot) {
+  queryDatabase = (collection) => this.db.collection(collection).get().then(function (querySnapshot) {
     return querySnapshot;
-  }).catch(function(error) {
+  }).catch(function (error) {
     console.log("Error getting documents: ", error);
   });
 }
-
-export default Firebase;
