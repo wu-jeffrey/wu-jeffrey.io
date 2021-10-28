@@ -3,15 +3,22 @@ import { Card, Avatar, Space, Button } from 'antd';
 import { motion, AnimatePresence } from 'framer-motion'
 
 import './Experience.css'
-import { UnyteIcon, MitreIcon, MyTimeIcon, ShopifyIcon, ShopifyPlusIcon } from '../../ui/icons'
+import { UnyteIcon, MitreIcon, MyTimeIcon, ShopifyIcon, ShopifyPlusIcon, ChalkIcon } from '../../ui/icons'
 
 
 export function Experience() {
   const jobsFullList = [
     {
+      company: 'Chalk',
+      position: 'Fullstack Developer',
+      location: 'Waterloo, ON',
+      avatar: <Avatar size={64} icon={<ChalkIcon />} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', background: '#f2f2f2' }} />,
+      date: 'May 2021 - Present'
+    },
+    {
       company: 'Shopify',
       position: 'Backend Developer',
-      location: 'Ottawa, ON',
+      location: 'Montreal, QB',
       avatar: <Avatar size={64} icon={<ShopifyIcon />} style={{ background: '#f2f2f2' }} />,
       date: 'Sep - Dec 2020'
     },
@@ -45,7 +52,7 @@ export function Experience() {
     },
   ]
 
-  const [jobs, setJobs] = useState(jobsFullList.slice(0, 3));
+  const [jobs, setJobs] = useState(jobsFullList.slice(0, 4));
   const toggleJobList = () => {
     if (jobs.length === 5) {
       setJobs(jobsFullList.slice(0, 3))
