@@ -12,6 +12,22 @@ export function Projects() {
 
   const projects = [
     {
+      name: 'Kitchen Reno 2021',
+      description: (
+        <>
+          <p>Currently in progress!</p>
+          <p>This time I learned how to make some sharp mitres for crown moulding, built and fixed up old cabinets, and more!</p>
+        </>
+      ),
+      images: [
+        { url: "/images/project-images/kitchen-reno/2.jpeg" },
+        { url: "/images/project-images/kitchen-reno/3.jpeg" },
+        { url: "/images/project-images/kitchen-reno/1.jpeg" },
+        { url: "/images/project-images/kitchen-reno/16.jpeg" },
+      ],
+      action: <Button disabled shape="round" href="/articles/0">Article Coming Soon!</Button>,
+    },
+    {
       name: 'Foyer Reno 2020',
       description: (
         <>
@@ -49,7 +65,7 @@ export function Projects() {
       description: (
         <>
           <p>I broke a leg on my glasses but didn't have time to wait for another pair... I had class to attend!</p>
-          <p>After some measuring 3D modelling, and lots of squinting, I was able to successfully retrofit my old lenses into the 3D printed frame.</p>
+          <p>After some measuring, 3D modelling, and lots of squinting, I was able to successfully retrofit my old lenses into the 3D printed frame.</p>
           <p>A full writeup of the challenges I faced is coming soon! (As soon as I build out an article feature on this website... 😅)</p>
         </>
       ),
