@@ -16,16 +16,53 @@ export function Projects() {
       description: (
         <>
           <p>Currently in progress!</p>
-          <p>This time I learned how to make some sharp mitres for crown moulding, built and fixed up old cabinets, and more!</p>
         </>
       ),
       images: [
-        { url: "/images/project-images/kitchen-reno/2.jpeg" },
-        { url: "/images/project-images/kitchen-reno/3.jpeg" },
-        { url: "/images/project-images/kitchen-reno/1.jpeg" },
-        { url: "/images/project-images/kitchen-reno/16.jpeg" },
+        { url: "/images/project-images/kitchen-reno/2.jpeg", width: 400 },
+        { url: "/images/project-images/kitchen-reno/3.jpeg", width: 400 },
+        { url: "/images/project-images/kitchen-reno/1.jpeg", width: 400 },
+        { url: "/images/project-images/kitchen-reno/16.jpeg", width: 400 },
       ],
-      action: <Button disabled shape="round" href="/articles/0">Article Coming Soon!</Button>,
+      actions: [<Button disabled shape="round" href="/articles/0">Article Coming Soon!</Button>,]
+    },
+    {
+      name: 'Search Algorithm Visualizer',
+      subtitle: '(Fall 2021 ECE 457A Assignment)',
+      description: (
+        <>
+          <p>Search algorithm visualizer for DFS, BFS and A* I made for my ECE 457A clas using vanilla JS, HTML & CSS</p>
+        </>
+      ),
+      images: [
+        { url: "/images/project-images/ece457a.png", width: 600 },
+      ],
+      actions:
+        [
+          <Popover
+            content={
+              <video ref={videoRef} width="1418" height="870" controls>
+                <source src="/videos/ece457a.mov" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            }
+            title="BFS Search Visualization" trigger="click" onVisibleChange={
+              (visible) => {
+                if (!visible) {
+                  // videoRef.current.play() // Ref isn't working
+                } else {
+                  // videoRef.current.pause()
+                }
+              }
+            }>
+            <Button style={{ marginRight: 4 }} type="primary" shape="round">See Video</Button>
+          </Popover>,
+          <Button style={{ marginLeft: 4 }} target="_blank" type="secondary" shape="round"
+            href="https://github.com/wu-jeffrey/ece457A"
+          >
+            See Github
+          </Button>
+        ]
     },
     {
       name: 'Foyer Reno 2020',
@@ -42,16 +79,15 @@ export function Projects() {
         { url: "/images/project-images/entry-reno/5.jpg", label: "before2" },
         { url: "/images/project-images/entry-reno/6.jpg", label: "after2" },
       ],
-      action: <Button disabled shape="round" href="/articles/0">Article Coming Soon!</Button>,
+      actions: [<Button disabled shape="round" href="/articles/0">Article Coming Soon!</Button>,]
     },
     {
       name: 'Bolt',
       subtitle: '(Personal Project 2020)',
       description: (
         <>
-          <p>I liked the look of the Nike Run Club App but the annoucers kept stopping my music mid-run and it was ruining my experience...</p>
+          <p>I liked using the Nike Run Club App, but the annoucers kept stopping my music mid-run and it was ruining my experience...</p>
           <p>So I made a alternative clone using React Native and NodeJS!</p>
-          <p>I've stopped running lately because of the snow, and consequently so has development but I hope to eventually publish this on an App Store!</p>
         </>
       ),
       images: [
@@ -73,7 +109,7 @@ export function Projects() {
         { url: "/images/project-images/glasses/1.jpg", label: "glasses1" },
         { url: "/images/project-images/glasses/2.jpg", label: "glasses2" },
       ],
-      action: <Button disabled shape="round" href="/articles/0">Article Coming Soon!</Button>,
+      actions: [<Button disabled shape="round" href="/articles/0">Article Coming Soon!</Button>,]
     },
     {
       name: 'Nutrition Tracker V2',
@@ -87,11 +123,13 @@ export function Projects() {
       images: [
         { url: "/images/project-images/nutrition-v2.svg", label: "nutrition2", width: 600 },
       ],
-      action: <Button target="_blank" type="primary" shape="round"
-        href="https://github.com/wu-jeffrey/nutrition-tracker-2"
-      >
-        See Github
-      </Button>
+      actions: [
+        <Button target="_blank" type="primary" shape="round"
+          href="https://github.com/wu-jeffrey/nutrition-tracker-2"
+        >
+          See Github
+        </Button>
+      ]
     },
     {
       name: 'Food Tic Tac Toe',
@@ -102,11 +140,13 @@ export function Projects() {
       images: [
         { url: "/images/project-images/food-tic-tac-toe.svg", label: "tic-tac-toe", width: 600 },
       ],
-      action: <Button target="_blank" type="primary" shape="round"
-        href="https://github.com/wu-jeffrey/food-tic-tac-toe/"
-      >
-        See Github
-      </Button>
+      actions: [
+        <Button target="_blank" type="primary" shape="round"
+          href="https://github.com/wu-jeffrey/food-tic-tac-toe/"
+        >
+          See Github
+        </Button>
+      ]
     },
     {
       name: 'Nutrition Tracker V1',
@@ -120,11 +160,13 @@ export function Projects() {
       images: [
         { url: "/images/project-images/nutrition.svg", label: "nutrition", width: 600 },
       ],
-      action: <Button target="_blank" type="primary" shape="round"
-        href="https://github.com/wu-jeffrey/nutrition-tracker/"
-      >
-        See Github
-      </Button>
+      actions: [
+        <Button target="_blank" type="primary" shape="round"
+          href="https://github.com/wu-jeffrey/nutrition-tracker/"
+        >
+          See Github
+        </Button>
+      ]
     },
     {
       name: 'Project Ares',
@@ -156,11 +198,13 @@ export function Projects() {
       images: [
         { url: "/images/project-images/sleight.svg", label: "sleight", width: 600 },
       ],
-      action: <Button target="_blank" type="primary" shape="round"
-        href="https://github.com/wu-jeffrey/sleight/"
-      >
-        See Github
-      </Button>
+      actions: [
+        <Button target="_blank" type="primary" shape="round"
+          href="https://github.com/wu-jeffrey/sleight/"
+        >
+          See Github
+        </Button>
+      ]
     },
     {
       name: 'Lego Gimbal',
@@ -179,25 +223,27 @@ export function Projects() {
       images: [
         { url: "/images/project-images/gimbal.jpg", label: "gimbal", width: 600 },
       ],
-      action:
-        <Popover
-          content={
-            <video ref={videoRef} width="320" height="240" controls>
-              <source src="/videos/gimbal.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          }
-          title="Gimbal" trigger="click" onVisibleChange={
-            (visible) => {
-              if (!visible) {
-                // videoRef.current.play() // Ref isn't working
-              } else {
-                // videoRef.current.pause()
-              }
+      actions:
+        [
+          <Popover
+            content={
+              <video ref={videoRef} width="320" height="240" controls>
+                <source src="/videos/gimbal.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             }
-          }>
-          <Button type="primary" shape="round">See Video</Button>
-        </Popover>
+            title="Gimbal" trigger="click" onVisibleChange={
+              (visible) => {
+                if (!visible) {
+                  // videoRef.current.play() // Ref isn't working
+                } else {
+                  // videoRef.current.pause()
+                }
+              }
+            }>
+            <Button type="primary" shape="round">See Video</Button>
+          </Popover>
+        ]
     },
   ]
 
@@ -222,7 +268,7 @@ export function Projects() {
                 <br />
                 <div style={{ maxWidth: 350, textAlign: "center" }}>
                   {project?.description}
-                  {project?.action}
+                  {project?.actions?.map(action => action)}
                 </div>
               </Space>
               {(projects.length - 1 !== i) && <Divider style={{ borderTop: '1px solid white' }} />}
