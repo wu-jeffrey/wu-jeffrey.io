@@ -52,10 +52,12 @@ export function Experience() {
     },
   ]
 
-  const [jobs, setJobs] = useState(jobsFullList.slice(0, 4));
+  const shortJobListLength = 3
+
+  const [jobs, setJobs] = useState(jobsFullList.slice(0, shortJobListLength));
   const toggleJobList = () => {
-    if (jobs.length === 5) {
-      setJobs(jobsFullList.slice(0, 3))
+    if (jobs.length === jobsFullList.length) {
+      setJobs(jobsFullList.slice(0, shortJobListLength))
     } else {
       setJobs(jobsFullList)
     }
@@ -86,7 +88,7 @@ export function Experience() {
       </Space>
       <Space style={{ marginTop: 24 }}>
         <Button type="primary" shape="round" href="/files/resume.pdf" target="_blank">Open Resume</Button>
-        <Button shape="round" onClick={toggleJobList}>{jobs.length === 3 ? "Show More" : "Hide"}</Button>
+        <Button shape="round" onClick={toggleJobList}>{jobs.length === shortJobListLength ? "Show More" : "Hide"}</Button>
       </Space>
     </div>
   );
