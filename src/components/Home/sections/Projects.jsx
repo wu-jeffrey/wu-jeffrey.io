@@ -6,9 +6,7 @@ import './Projects.css'
 
 
 export function Projects() {
-  const videoRef = useRef(null)
-
-
+  const videoRef = useRef() // TODO: not working rn
 
   const projects = [
     {
@@ -19,10 +17,10 @@ export function Projects() {
         </>
       ),
       images: [
-        { url: "/images/project-images/kitchen-reno/2.jpeg", width: 400 },
-        { url: "/images/project-images/kitchen-reno/3.jpeg", width: 400 },
-        { url: "/images/project-images/kitchen-reno/1.jpeg", width: 400 },
-        { url: "/images/project-images/kitchen-reno/16.jpeg", width: 400 },
+        { url: "/images/project-images/kitchen-reno/2.jpeg", width: 300 },
+        { url: "/images/project-images/kitchen-reno/3.jpeg", width: 300 },
+        { url: "/images/project-images/kitchen-reno/1.jpeg", width: 300 },
+        { url: "/images/project-images/kitchen-reno/16.jpeg", width: 300 },
       ],
       actions: [<Button disabled shape="round" href="/articles/0">Article Coming Soon!</Button>,]
     },
@@ -62,6 +60,40 @@ export function Projects() {
           >
             See Github
           </Button>
+        ]
+    },
+    {
+      name: 'Polaris',
+      subtitle: '(Winter 2021 MTE 380 Final Project)',
+      description: (
+        <>
+          <p>An intuitive and low cost human-machine interface to help blind and visually impaired people navigate unfamiliar spaces quickly</p>
+        </>
+      ),
+      images: [
+        { url: "/images/project-images/polaris/1.png", width: 400 },
+        { url: "/images/project-images/polaris/2.png", width: 400 },
+      ],
+      actions:
+        [
+          <Popover
+            content={
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/3ttGRnKtWzQ"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen />
+            }
+            title="BFS Search Visualization" trigger="click" onVisibleChange={
+              (visible) => {
+                if (!visible) {
+                  // videoRef.current.play() // Ref isn't working
+                } else {
+                  // videoRef.current.pause()
+                }
+              }
+            }>
+            <Button style={{ marginRight: 4 }} type="primary" shape="round">See Video</Button>
+          </Popover>
         ]
     },
     {
