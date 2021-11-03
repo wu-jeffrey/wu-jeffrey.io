@@ -11,7 +11,7 @@ import { Projects } from './sections/Projects'
 export function Home() {
   return (
     <div className='Home'>
-      <div className='hero'>
+      <div className='hero' style={{ overflowX: 'hidden' }}>
         <AnimatePresence>
           <motion.div className="left"
             initial={{ opacity: 0, y: 100 }}

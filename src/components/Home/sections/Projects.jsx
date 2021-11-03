@@ -280,7 +280,7 @@ export function Projects() {
   ]
 
   return (
-    <div className='Projects'>
+    <div className='Projects' style={{ overflowX: 'hidden' }}>
       <motion.h1 id="projects" className="bold white" initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>Projects</motion.h1>
       <Space direction="vertical" align="center">
         {
