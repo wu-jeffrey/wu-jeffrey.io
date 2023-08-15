@@ -2,18 +2,8 @@
   font-family: RedHat;
 }
 
-.bold {
-  font-weight: bold;
-}
-
-.header {
-  max-width: 1200px;
-  font-size: large;
-  margin: auto auto 64px auto;
-  padding: 24px;
-}
-
 .hero {
+  margin-top: 64px;
   font-size: xx-large;
   display: flex;
   justify-content: center;

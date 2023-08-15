@@ -74,3 +74,24 @@ const shopifyPlusSvg = () => {
   );
 }
 export const ShopifyPlusIcon = props => <Icon component={shopifyPlusSvg} {...props} />
+
+const chalkSvg = () => {
+  const color = 'blue'
+  const viewBox = '0 0 24 24'
+  const width = 48
+  const height = 48
+  const draw = 'M8 .7a12 12 0 0111.6 20.6v-6.1H19a30.2 30.2 0 01-4.9 0c-.7 0-1.5-.2-2.2-.5a8.3 8.3 0 01-3.1-2L7 11c-.2-.2-.8-.4-1.4-.3-.5 0-1.1.3-1.4 1.2l-.1.6V21A12 12 0 01.4 9 12 12 0 018 .7zm.3 9l.6.7.6.9c.7.8 1.6 1.4 2.7 1.8 1.5.6 3.1.6 4.7.3 1.4-.3 2.6-1 3.5-2a4.8 4.8 0 01-4-.3 4 4 0 01-1-.7c-.5-.5-1-1.3-1.2-2-.1-.4-.4-1.6-1-2.3A5.3 5.3 0 0011 4.6a5.4 5.4 0 00-5.1.5c-.7.5-1.3 1.2-1.6 2-.3.9-.3 2-.3 2.8.4-.5 1.2-1 2.5-1 .6.1 1.2.3 1.7.8zm11.4.3V8.2s0-.6-.3-.9c-.5-.4-1.6-.3-1.8-.3h-2.2s.2 1.2.6 1.8c.7 1 1.4 1.2 1.7 1.2 1 .4 2 0 2 0z'
+
+  return (
+    <svg width={width} height={height} viewBox={viewBox} fill='none' xmlns='http://www.w3.org/2000/svg'>
+      <path fill={color} fillRule='evenodd' clipRule='evenodd' d={draw} />
+      <path fill={color} fillRule='evenodd' clipRule='evenodd'
+        d='M10.3 18A1 1 0 009 17c-.7.2-1 1-.5 1.6.2.3.7.5 1.1.3.4-.1.7-.5.7-1zM14.8 16.9a1 1 0 00-1 1.4c.2.6 1 .9
+      1.6.5.4-.3.5-.8.4-1.2a1 1 0 00-1-.7z'/>
+      <path fill={color}
+        d='M9 23.3c1 .5 2.1.7 3.3.7 1 0 2.1-.3 3.1-.9.4-.2.5-.7.3-1a.8.8 0 00-1-.3 5.1 5.1 0 01-5 0 .8.8 0 00-1 .4c-.1.4 0 .9.4 1z' />
+    </svg>
+  )
+}
+
+export const ChalkIcon = props => <Icon component={chalkSvg} {...props} />
