@@ -7,6 +7,7 @@ import './App.css'
 
 import { Home } from './components/Home'
 import { Article } from './components/Article/Article.jsx'
+import { RickRoll } from './components/RickRoll/RickRoll.jsx'
 
 export default function App() {
   return (
@@ -19,10 +20,11 @@ export default function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/articles/:id" component={Article} />
+            <Route path="/linktree" component={RickRoll} />
           </Switch>
-        </Router>
-      </FirebaseContext.Provider>
+        </Router >
+      </FirebaseContext.Provider >
       <Layout.Footer>Jeffrey Wu © {(new Date()).getFullYear()}</Layout.Footer>
-    </div>
+    </div >
   );
 }
