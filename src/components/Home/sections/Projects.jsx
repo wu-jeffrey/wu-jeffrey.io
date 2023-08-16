@@ -36,6 +36,7 @@ export function Projects() {
       actions:
         [
           <Popover
+            className='video-popover'
             content={
               <video ref={videoRef} width="1418" height="870" controls>
                 <source src="/videos/ece457a.mov" type="video/mp4" />
@@ -75,6 +76,7 @@ export function Projects() {
       actions:
         [
           <Popover
+            className='video-popover'
             content={
               <iframe width="560" height="315" src="https://www.youtube.com/embed/3ttGRnKtWzQ"
                 title="YouTube video player" frameborder="0"
@@ -256,6 +258,7 @@ export function Projects() {
       actions:
         [
           <Popover
+            className='video-popover'
             content={
               <video ref={videoRef} width="320" height="240" controls>
                 <source src="/videos/gimbal.mp4" type="video/mp4" />

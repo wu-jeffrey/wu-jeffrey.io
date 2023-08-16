@@ -20,4 +20,8 @@
     overflow-x: scroll;
   }
 
+  .video-popover {
+    display: none;
+  }
+
 }
