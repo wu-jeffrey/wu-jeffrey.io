@@ -85,7 +85,7 @@ export function GeometricArt() {
     )
 
   return (
-    <motion.div style={{ zIndex: -10, marginLeft: 32 }} initial={{ opacity: 0, rotate: 50 }} animate={{ opacity: 1, rotate: 0 }}>
+    <motion.div style={{ zIndex: -10, marginLeft: 0 }} initial={{ opacity: 0, rotate: 50 }} animate={{ opacity: 1, rotate: 0 }}>
       <motion.svg height={height} width={width}>
         <defs>
           {/* unused hatching pattern */}

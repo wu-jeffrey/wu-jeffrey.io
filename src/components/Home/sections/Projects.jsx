@@ -17,10 +17,8 @@ export function Projects() {
         </>
       ),
       images: [
-        { url: "/images/project-images/kitchen-reno/2.jpeg", width: 300 },
-        { url: "/images/project-images/kitchen-reno/3.jpeg", width: 300 },
         { url: "/images/project-images/kitchen-reno/1.jpeg", width: 300 },
-        { url: "/images/project-images/kitchen-reno/16.jpeg", width: 300 },
+        { url: "/images/project-images/kitchen-reno/18.jpeg", width: 300 },
       ],
       actions: [<Button disabled shape="round" href="/articles/0">Article Coming Soon!</Button>,]
     },
@@ -108,8 +106,8 @@ export function Projects() {
         { url: "/images/project-images/entry-reno/1.jpg", label: "before" },
         { url: "/images/project-images/entry-reno/2.jpg", label: "after" },
 
-        { url: "/images/project-images/entry-reno/5.jpg", label: "before2" },
-        { url: "/images/project-images/entry-reno/6.jpg", label: "after2" },
+        // { url: "/images/project-images/entry-reno/5.jpg", label: "before2" },
+        // { url: "/images/project-images/entry-reno/6.jpg", label: "after2" },
       ],
       actions: [<Button disabled shape="round" href="/articles/0">Article Coming Soon!</Button>,]
     },
@@ -290,7 +288,7 @@ export function Projects() {
                 <h2 className="white">{project.name}</h2>
                 {!!project.subtitle && <h4 className="white">{project.subtitle}</h4>}
                 <br />
-                <Space>
+                <Space className='project-image-container'>
                   {project.images.map((img, i) => {
                     return (
                       <img key={i} alt={img.label} style={{ width: img?.width || 200, borderRadius: 16 }} src={img.url} />

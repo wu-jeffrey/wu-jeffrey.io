@@ -3,17 +3,24 @@ import { Card, Avatar, Space, Button } from 'antd';
 import { motion, AnimatePresence } from 'framer-motion'
 
 import './Experience.css'
-import { UnyteIcon, MitreIcon, MyTimeIcon, ShopifyIcon, ShopifyPlusIcon, ChalkIcon } from '../../ui/icons'
+import { UnyteIcon, MitreIcon, MyTimeIcon, ShopifyIcon, ShopifyPlusIcon, ChalkIcon, AmazonIcon } from '../../ui/icons'
 
 
 export function Experience() {
   const jobsFullList = [
     {
+      company: 'Amazon',
+      position: 'Software Engineer',
+      location: 'Toronto, ON',
+      avatar: <Avatar size={64} icon={<AmazonIcon />} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', background: '#f2f2f2' }} />,
+      date: 'Aug 2022 - Present'
+    },
+    {
       company: 'Chalk',
       position: 'Fullstack Developer',
       location: 'Waterloo, ON',
       avatar: <Avatar size={64} icon={<ChalkIcon />} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', background: '#f2f2f2' }} />,
-      date: 'May 2021 - Present'
+      date: 'May 2021 - Jun 2022'
     },
     {
       company: 'Shopify',
@@ -66,7 +73,7 @@ export function Experience() {
   return (
     <div className='Experience' style={{ minHeight: 680 }}>
       <motion.h1 className="bold section-title" initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>Experience</motion.h1>
-      <Space direction="vertical" style={{ width: 400 }}>
+      <Space direction="vertical" style={{ width: 375 }}>
         {
           jobs.map((job, i) => (
             <AnimatePresence key={i}>

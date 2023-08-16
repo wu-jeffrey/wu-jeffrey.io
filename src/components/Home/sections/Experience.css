@@ -10,3 +10,27 @@
 .section-title {
   color: white;
 }
+
+.Space Button {
+  margin: 10px 0;
+  /* Increase vertical margin for better touch accessibility */
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 768px) {
+
+  /* Adjusting width of job listings to take up more space on mobile screens */
+  .Experience .Space {
+    width: 90%;
+  }
+
+  .Experience {
+    padding: 16px;
+    /* Reduce padding for mobile */
+  }
+
+  .section-title {
+    font-size: 24px;
+    /* Optionally, reduce the font size for mobile screens */
+  }
+}

@@ -17,12 +17,10 @@ export function Home() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}>
             <h1 className='bold'>Jeffrey Wu</h1>
-            <h4>Developer</h4>
-            <h4>Student</h4>
-            <h4>DIYer</h4>
-            <Space>
+            <h4>Software Engineer</h4>
+            <div className='cta'>
               <Button
-                href="https://www.linkedin.com/in/jeff--wu/"
+                href="https://www.linkedin.com/in/effective-inertia/"
                 target="_blank"
                 type="primary"
                 shape="round"
@@ -32,7 +30,7 @@ export function Home() {
                 target="_blank"
                 shape="round"
                 icon={<GithubOutlined />}>Github</Button>
-            </Space>
+            </div>
           </motion.div>
         </AnimatePresence>
         <div className="right">
