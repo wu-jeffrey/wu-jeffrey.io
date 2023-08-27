@@ -1,0 +1,52 @@
+[debug] [2023-08-27T02:30:16.243Z] ----------------------------------------------------------------------
+[debug] [2023-08-27T02:30:16.245Z] Command:       /opt/homebrew/Cellar/node/20.1.0/bin/node /opt/homebrew/bin/firebase deploy
+[debug] [2023-08-27T02:30:16.246Z] CLI Version:   11.22.0
+[debug] [2023-08-27T02:30:16.246Z] Platform:      darwin
+[debug] [2023-08-27T02:30:16.246Z] Node Version:  v20.1.0
+[debug] [2023-08-27T02:30:16.246Z] Time:          Sat Aug 26 2023 22:30:16 GMT-0400 (Eastern Daylight Time)
+[debug] [2023-08-27T02:30:16.246Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-08-27T02:30:16.304Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-08-27T02:30:16.305Z] > authorizing via signed-in user (jeff.jiang.wu@gmail.com)
+[debug] [2023-08-27T02:30:16.305Z] [iam] checking project personal-117 for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-08-27T02:30:16.306Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-117:testIamPermissions [none]
+[debug] [2023-08-27T02:30:16.306Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-117:testIamPermissions x-goog-quota-user=projects/personal-117
+[debug] [2023-08-27T02:30:16.306Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-117:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-08-27T02:30:16.559Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-117:testIamPermissions 200
+[debug] [2023-08-27T02:30:16.559Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-117:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-08-27T02:30:16.560Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-117 [none]
+[debug] [2023-08-27T02:30:16.851Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-117 200
+[debug] [2023-08-27T02:30:16.851Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-117 {"projectId":"personal-117","projectNumber":"346449426694","displayName":"personal-site","name":"projects/personal-117","resources":{"hostingSite":"personal-117","realtimeDatabaseInstance":"personal-117","storageBucket":"personal-117.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_c2ed5fa3-82e8-48ca-bb4e-54d00c8136e4"}
+[info] 
+[info] === Deploying to 'personal-117'...
+[info] 
+[info] i  deploying firestore, hosting 
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2023-08-27T02:30:16.854Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/personal-117:test [none]
+[debug] [2023-08-27T02:30:16.854Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/personal-117:test [omitted]
+[debug] [2023-08-27T02:30:17.051Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/personal-117:test 200
+[debug] [2023-08-27T02:30:17.051Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/personal-117:test {"issues":[{"sourcePosition":{"fileName":"firestore.rules"},"description":"Ruleset uses old version (version [1]). Please update to the latest version (version [2]).","severity":"WARNING"}]}
+[warn] ⚠  [W] undefined:undefined - Ruleset uses old version (version [1]). Please update to the latest version (version [2]). 
+[info] ✔  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2023-08-27T02:30:17.053Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-117/versions [none]
+[debug] [2023-08-27T02:30:17.053Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-117/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2023-08-27T02:30:17.509Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-117/versions 200
+[debug] [2023-08-27T02:30:17.509Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-117/versions {"name":"projects/346449426694/sites/personal-117/versions/4c0c24067e0f1511","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2023-08-27T02:30:17.511Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/personal-117/releases pageSize=10&pageToken=
+[debug] [2023-08-27T02:30:17.512Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/personal-117/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2023-08-27T02:30:17.627Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/personal-117/releases 200
+[debug] [2023-08-27T02:30:17.627Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/personal-117/releases {"releases":[{"name":"projects/personal-117/releases/cloud.firestore","rulesetName":"projects/personal-117/rulesets/1b06230b-d603-42e7-8d88-72178499c8ab","createTime":"2019-02-18T21:59:00.681396Z","updateTime":"2023-08-27T02:29:42.656068Z"}]}
+[debug] [2023-08-27T02:30:17.628Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/personal-117/rulesets/1b06230b-d603-42e7-8d88-72178499c8ab [none]
+[debug] [2023-08-27T02:30:17.749Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/personal-117/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2023-08-27T02:30:17.749Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/personal-117/databases/(default)/collectionGroups/-/indexes {}
+[debug] [2023-08-27T02:30:17.749Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/personal-117/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2023-08-27T02:30:17.786Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/personal-117/rulesets/1b06230b-d603-42e7-8d88-72178499c8ab 200
+[debug] [2023-08-27T02:30:17.786Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/personal-117/rulesets/1b06230b-d603-42e7-8d88-72178499c8ab [omitted]
+[info] i  firestore: latest version of firestore.rules already up to date, skipping upload... 
+[debug] [2023-08-27T02:30:17.818Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/personal-117/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2023-08-27T02:30:17.819Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/personal-117/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/personal-117/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[info] ✔  firestore: deployed indexes in firestore.indexes.json successfully 
+[info] i  hosting[personal-117]: beginning deploy... 
+[info] i  hosting[personal-117]: found 71 files in build 
+[debug] [2023-08-27T02:30:17.831Z] [hosting] uploading with 200 concurrency
