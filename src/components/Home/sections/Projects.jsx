@@ -10,10 +10,24 @@ export function Projects() {
 
   const projects = [
     {
+      name: 'WatchDog (Autonomous Tracking Chip Firing System)',
+      subtitle: '(Fourth Year Final Project 2022)',
+      description: (
+        <>
+          <p>High speed chases are the one of the most dangerous things police do. More innocent people die each year in these chases than police shootings.</p>
+          <p>So, we built a paintball sentry gun to shoot a tracking chip onto dangerous vehicles to prevent the need for high speed chases.</p>
+          <p>Watch the video on Youtube <a href='https://www.youtube.com/watch?v=Lw0-SUcCRJg'>here</a></p>
+        </>
+      ),
+      images: [
+        { url: "/images/project-images/FYDP.gif", label: "fydp", width: 350 },
+      ],
+    },
+    {
       name: 'Kitchen Reno 2021',
       description: (
         <>
-          <p>Currently in progress!</p>
+          <p>There's a real funny story about why I renovated this kitchen. Ask me about it!</p>
         </>
       ),
       images: [
