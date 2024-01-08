@@ -26,13 +26,15 @@
   - default firestore settings for now
   - yes to SPA for react router to handle
   - type `build` when asked for build folder. This will deploy the files in the "build folder" created in step 2
- 
+
+
 ### 2. Build react app
+  #### 2.0 `export NODE_OPTIONS=--openssl-legacy-provider` cuz new version of node is weird
   #### 2.1 Delete `build/index.html` firebase init
   #### 2.2 Build
   `npm run build`
- 
+
 ### 3. Deploy to firebase hosting
   #### 2.1 `firebase deploy`
-  
+
 ### 4. Fingers crossed nothing explodes
